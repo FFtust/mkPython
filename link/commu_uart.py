@@ -13,7 +13,7 @@ import time
 import threading
 
 from utils.mylog import console
-from communication.channel.base import base_link
+from link.base import base_link
 
 BAUDRATE_DEFAULT = 115200
 SERIAL_TIMEOUT_DEFAULT = 0.1
@@ -75,6 +75,7 @@ class uart_link(base_link):
     
     def rigister_protocol_parse_handle(self, protocol):
         self.protocol_list.append(protocol)
+        protocol.link = self
 
     def start_listening(self):
         self.thread_work = threading.Thread(target = self.__listening_task, args = ())

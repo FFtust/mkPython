@@ -41,17 +41,40 @@ m = hashlib.md5()
 m.update("lien".encode("utf-8"))
 print(m.hexdigest())
 '''
-# ____________________________________________________________________b_________
-import communication.protocol.F3F4
-import communication.channel.commu_uart
+# _____________________________________________________________________________
+# import communication.protocol.F3F4
+# import communication.channel.commu_uart
 
-uart = communication.channel.commu_uart.uart_link(["COM3", "115200"])
-uart.config(["COM3", "115200"])
-uart.open()
+# uart = communication.channel.commu_uart.uart_link(["COM3", "115200"])
+# uart.config(["COM3", "115200"])
+# uart.open()
 
-protocol = communication.protocol.F3F4.F3F4_frame()
+# protocol = communication.protocol.F3F4.F3F4_frame()
 
-uart.rigister_protocol_parse_handle(protocol)
+# uart.rigister_protocol_parse_handle(protocol)
 
-# uart.write(b"hello")
-uart.start_listening()
+# # uart.write(b"hello")
+# uart.start_listening()
+
+# _____________________________________________________________________________
+# link = link_c()
+
+# protocol = protocol_c();
+
+# link.register(protocol)
+
+# process = process_c()
+
+# protocol.register(process)
+
+# process.update_value()
+# process.update_parameter()
+
+
+# get_value(tag, xx)
+# request(tag, xx)
+
+# halo.button_is_pressed()
+# halo.led.show_all(100, 0, 0)
+
+# _____________________________________________________________________________

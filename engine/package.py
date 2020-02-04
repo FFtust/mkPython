@@ -10,10 +10,10 @@ PROTOCOL_SUBSCRIBE_ID = 0x29
 
 
 # script to online package
-def create_package(servive_id, exec_str, serial_num = 0):
+def create_package(exec_str, serial_num = 0, servive_id = 0x01):
     package_bytes = bytearray()
     
-    if cinfig.service_id_enable:
+    if config.service_id_enable:
         service_byte_len = 1
     else:
         service_byte_len = 0
@@ -21,28 +21,28 @@ def create_package(servive_id, exec_str, serial_num = 0):
     # add protocol id
     package_bytes.append(ONLINE_CMD_ID)
     
-    if SERVICE_ID_ENABLE:
+    if config.service_id_enable:
         # add servive id
         package_bytes.append(servive_id)
     
     # add serial num, 2 bytes
-    if SERIAL_NUM_LEN == 2:
+    if config.serial_num_len == 2:
         serial_num_bytes = serial_num.to_bytes(2, "little")
         package_bytes += serial_num_bytes
-    elif SERIAL_NUM_LEN == 1:
+    elif config.serial_num_len == 1:
         package_bytes.append(serial_num)
 
     # add script bytes
-    if SCRIPT_PACKAGE_TYPE == SCRIPT_PACKAGE_TYPE_BIGSTRING:
+    if config.script_package_type == config.SCRIPT_PACKAGE_TYPE_BIGSTRING:
         strbytes = __bigstring_package(exec_str)  
-    elif SCRIPT_PACKAGE_TYPE == SCRIPT_PACKAGE_TYPE_STRING:
+    elif config.script_package_type == config.SCRIPT_PACKAGE_TYPE_STRING:
         strbytes = __string_package(exec_str) 
-    elif SCRIPT_PACKAGE_TYPE == SCRIPT_PACKAGE_TYPE_STRING0:
+    elif config.script_package_type == config.SCRIPT_PACKAGE_TYPE_STRING0:
         strbytes = __string0_package(exec_str)
         
     package_bytes += strbytes
     
-    conslole.debug("whole package %s" %package_bytes)
+    console.debug("whole package %s" %package_bytes)
     
     return package_bytes
 
@@ -65,7 +65,6 @@ def print_frame(frame):
 
     print(out_str)
  
-
 
 def __string0_package(string):
     ret_frame = bytearray()

@@ -13,7 +13,7 @@ class cell_item():
 
         self.value = None
         self.data_new_flag = None
-        self.data_update_callBack = None
+        self.data_update_callBack = []
         self.subscribe_handle = None
         
         self.auto_subscribe_control_flag = True
@@ -22,8 +22,35 @@ class cell_item():
     def reset_status(self):
         self.value = None
         self.data_new_flag = None
-        self.subscribe_handle = None
+        self.subscribe_handle = []
         self.get_value_called_count = 0
         self.data_update_callBack = None
         self.auto_subscribe_control_flag = True
+
+    def register_data_update_callback(self, callback):
+        self.data_update_callBack.append(callback)
+
+    def update_value(self, value):
+        '''
+        low computer to high computer
+        '''
+
+        self.value = value
+        self.data_new_flag = True
+
+        for item in self.data_update_callBack:
+            item(value)
+
+    def update_parameters(self, paras, until_done = False):
+        '''
+        high computer to low computer
+        '''
+        self.paras = paras
+
+    def get_value(self):
+        self.get_value_called_count += 1
+
+        return self.value
+
+
 
