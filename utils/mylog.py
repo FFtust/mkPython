@@ -2,7 +2,7 @@ import logging
 logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 console = logging.getLogger(__name__)
-console.setLevel(logging.WARN)
+console.setLevel(logging.ERROR)
 
 
 # logger.setLevel(level = logging.INFO)

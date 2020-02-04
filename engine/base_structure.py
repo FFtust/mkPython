@@ -1,3 +1,5 @@
+import time
+
 class cell_item():
     def __init__(self, tag, func, paras, default_value):
         self.tag = tag
@@ -40,6 +42,13 @@ class cell_item():
 
         for item in self.data_update_callBack:
             item(value)
+    
+    def wait_data_new(self, max_time = 1):
+        start_t = time.time()
+
+        while time.time() - start_t < max_time:
+            if self.data_new_flag == True:
+                return
 
     def update_parameters(self, paras, until_done = False):
         '''

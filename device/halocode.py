@@ -27,7 +27,7 @@ class halo():
         pass
 
     # button
-    def __button_is_pressed(self):
+    def button_is_pressed(self, index = 0):
         ret = get_value("T1")
         if ret == None:
             return False

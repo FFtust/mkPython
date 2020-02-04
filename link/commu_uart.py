@@ -89,12 +89,6 @@ class uart_link(base_link):
             data_stream = self.read()
             if data_stream == b'':
                 continue
-            print(data_stream)
             for item in self.protocol_list:
                 item.parse_data_stream(data_stream, "uart")
 
-# uart = uart_link(["COM3", "115200"])
-# uart.config(["COM3", "115200"])
-# uart.open()
-# # uart.write(b"hello")
-# uart.start_listening()

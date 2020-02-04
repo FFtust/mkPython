@@ -1,4 +1,8 @@
-from engine.package import create_package
+import json
+
+from utils.mylog import console
+
+from engine.package import create_package, print_frame
 from engine.base_structure import cell_item
 table_halocode_tag = \
 {
@@ -8,29 +12,55 @@ table_halocode_tag = \
 
 table_halocode_key = \
 {
-    "1": {"tag":"T1", "obj":table_halocode_tag["T1"]},
-    "2": {"tag":"T2", "obj":table_halocode_tag["T2"]}
+    1: {"tag":"T1", "obj":table_halocode_tag["T1"]['obj']},
+    2: {"tag":"T2", "obj":table_halocode_tag["T2"]['obj']}
 }
 
+class subscribe_item_structure_c():
+    def __init__(self, frame = None):
+        self.frame = frame
+
+    def set_frame(self, frame):
+        self.frame = frame
+
+    def get_json_str(self):
+        str_len = 2
+        service_len = 1
+
+        json_string = str(self.frame[str_len + service_len :], "utf8")
+
+        return json_string
+
+    def get_json_obj(self):
+        return eval(self.get_json_str())
 
 class database_c():
     def __init__(self):
         self.data_key = table_halocode_key
         self.data_tag = table_halocode_tag
         self.protocol = None
+
+        self.subscribe_item = subscribe_item_structure_c()
     
     def process(self, frame, d_info = None):
         if frame[0] == 0x29:
-            self.__process_subscribe(frame)
+            self.__process_subscribe(frame[1:])
         elif frame[0] == 0x28:
-            self.__process_realtime(frame)
+            console.error("process 0x28 frame %s" %frame)
+            self.__process_realtime(frame[1:])
 
     def __process_subscribe(self, frame):
         '''
         process topic data(0x29)
         '''
-        pass
+        self.subscribe_item.set_frame(frame)
+        obj = self.subscribe_item.get_json_obj()
+        print("OOO", obj)
+        for item in obj:
+            if item in self.data_key:
+                self.data_key[item]['obj'].update_value(obj[item])
 
+        
     def __process_realtime(self, frame):
         '''
         process client-server data(0x28)
@@ -43,6 +73,12 @@ class database_c():
         para = str(cell_item['obj'].paras)
         return create_package(func_script + para)
 
+    def create_subcribe_frame(self, cell_item):
+        key = cell_item['key']
+        func_script = cell_item['obj'].func
+        para = str(cell_item['obj'].paras)
+        return create_package("subscribe.add_item(%s, %s, %s)" %(key, func_script, para))
+
 ############################################################
     def data_lib_append(self, lib_dict):
         pass
@@ -52,12 +88,16 @@ class database_c():
 
     def get_value(self, tag, para = None):
         if tag in self.data_tag:
-            return self.data_tag["tag"].get_value()
+            self.data_tag[tag]['obj'].data_new_flag = False
+            self.protocol.send_protocol(self.create_subcribe_frame(self.data_tag[tag]))
+            self.data_tag[tag]['obj'].wait_data_new()
+
+            return self.data_tag[tag]['obj'].get_value()
         else:
             return None
 
     def get_value_by_tag(self, tag, para = None):
-        return self.get_value(key, para)
+        return self.get_value(tag, para)
 
 
     def get_value_by_key(self, key, para = None):

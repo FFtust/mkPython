@@ -13,7 +13,6 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../api'))#指向src目录
-print(sys.path)
 
 # -- Project information -----------------------------------------------------
 

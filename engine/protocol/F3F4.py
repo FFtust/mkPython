@@ -4,6 +4,9 @@ from struct import pack, unpack
 from utils.common import int_to_byte_2
 from utils.mylog import console
 
+from engine.package import print_frame
+
+
 '''
 F3F4 frame structure
 ----*----*----*----*----*----*----*----*----*----*
@@ -66,7 +69,6 @@ class F3F4_frame():
         protocol_frame.append(data_sum)   
         protocol_frame.append(COMMON_PROTOCOL_END)  
         
-        print("rrr", data, protocol_frame)
         return protocol_frame
 
     def print_frame(self, frame):
@@ -177,6 +179,7 @@ class F3F4_frame():
         return ret_num
     
     def send_protocol(self, package):
-        print("fffff", package)
+        console.debug("send_protocol %s"%package)
         if self.link:
+            print_frame(self.create_frame(package))
             self.link.write(self.create_frame(package))
