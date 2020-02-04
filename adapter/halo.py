@@ -1,13 +1,14 @@
-import communication.protocol.F3F4
-import communication.channel.commu_uart
+import engine.protocol.F3F4
+import engine.database
 
-uart = communication.channel.commu_uart.uart_link(["COM3", "115200"])
-uart.config(["COM3", "115200"])
-uart.open()
+import link.commu_uart
 
-protocol = communication.protocol.F3F4.F3F4_frame()
+def set_channel(channel, bauadrate = 115200):
+	uart = link.commu_uart.uart_link([channel, str(bauadrate)])
+	uart.config([channel, str(bauadrate)])
+	uart.open()
 
-uart.rigister_protocol_parse_handle(protocol)
+	protocol = engine.protocol.F3F4.F3F4_frame()
+	protocol.register_frame_process(engine.database.database)
 
-# uart.write(b"hello")
-uart.start_listening()
+	uart.rigister_protocol_parse_handle(protocol)

@@ -7,9 +7,9 @@ class led_c():
         pass
 
     def show_all(self, r, g, b, percentage):
-        """function description.
+        """control all the leds.
 
-        set all led.
+        set all leds with r/g/b components.
 
         Args:
             r (int): 0 ~ 255; color component abou red 
@@ -17,24 +17,25 @@ class led_c():
             b (int): 0 ~ 255; color component abou blue
             percentage (int): 0 ~ 100; brightness percentage
         Returns:
-            None
-
+               None
         """
         pass
 
     def show_single(self, index, r, g, b):
-        """function description.
+        """control single led.
 
-        set single led.
+        set led which id is 'index' with r/g/b components.
 
         Args:
+            index (int): 1 ~ 12; led index
             r (int): 0 ~ 255; color component abou red 
             g (int): 0 ~ 255; color component abou green
             b (int): 0 ~ 255; color component abou blue
 
         Returns:
             None
-
+        Raises:
+        
         """
         pass
 
@@ -48,7 +49,8 @@ class led_c():
 
         Returns:
             None
-
+        Raises:
+        
         """
         pass
 
@@ -61,9 +63,12 @@ class button_c():
 
         is button status actived.
 
+        Args:
+            index (int): 0~ ; button index 
         Returns:
             bool
-
+        Raises:
+        
         """
 
         pass
