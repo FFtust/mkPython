@@ -3,6 +3,10 @@ import engine.database
 
 import link.commu_uart
 
+from device.table_halocode_api import table_halocode_tag
+engine.database.table_tag.update(table_halocode_tag)
+
+
 uart = link.commu_uart.uart_link(["COM0", 115200])
 
 protocol = engine.protocol.F3F4.F3F4_frame()

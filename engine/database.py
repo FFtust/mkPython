@@ -4,16 +4,17 @@ from utils.mylog import console
 
 from engine.package import create_package, print_frame
 from engine.base_structure import cell_item
-table_halocode_tag = \
+
+table_tag = \
 {
     "T1": {"key":1, "obj":cell_item("T1", "halo.button.is_pressed", (), False)},
     "T2": {"key":2, "obj":cell_item("T2", "led.show_all", (0,0,0), None)},
 }
 
-table_halocode_key = \
+table_key = \
 {
-    1: {"tag":"T1", "obj":table_halocode_tag["T1"]['obj']},
-    2: {"tag":"T2", "obj":table_halocode_tag["T2"]['obj']}
+    1: {"tag":"T1", "obj":table_tag["T1"]['obj']},
+    2: {"tag":"T2", "obj":table_tag["T2"]['obj']}
 }
 
 class subscribe_item_structure_c():
@@ -36,8 +37,8 @@ class subscribe_item_structure_c():
 
 class database_c():
     def __init__(self):
-        self.data_key = table_halocode_key
-        self.data_tag = table_halocode_tag
+        self.data_key = table_key
+        self.data_tag = table_tag
         self.protocol = None
 
         self.subscribe_item = subscribe_item_structure_c()

@@ -4,6 +4,12 @@
 import re
 import os
 import sys
+import hashlib
+
+def get_hash(s):
+    m = hashlib.md5()
+    m.update(s.encode("utf-8"))
+    return m.hexdigest()
 
 API_DIR = "../device/api"
 
@@ -21,19 +27,30 @@ def create_from_file(file_name):
     last_line = ""
     with open(file_name, 'r', encoding='UTF-8') as f:
         for line in f: 
-            ret = re.search(r'(.*)def(.*):', line)
+            # get class
+            ret = re.match(r'class(.*):', line)
             if ret:
-                last = re.search(r"__fun_type__:(.*)read", last_line)
-                if last:
-                    # print("%s%s%s"%(line, "        ", "get_vlue(\"a1\")"))
-                    new_file_content += ("%s%sreturn %s\n"%(line, "        ", "get_vlue(\"a1\")"))
-                else:
-                    new_file_content += ("%s%s%s\n"%(line, "        ", "request(\"a1\")"))
+                new_file_content += '\r\n'
+                new_file_content += (ret.group(0) + '\r\n')
+            
+            else:
+                ret = re.search(r'(.*)def(.*):', line)
+                if ret:
+                    func = re.search(r'\s(\w*)\(', line).group(0)[1:-1]
+                    tag = get_hash(func)
+                    para = re.search(r'\((.*)\):', line).group(0)[:-1].replace("self,", "").replace("self", "")
+
+                    last = re.search(r"__fun_type__:(.*)read", last_line)
+                    if last:
+                        # print("%s%s%s"%(line, "        ", "get_vlue(\"a1\")"))
+                        new_file_content += ("%s%sreturn get_value(\"%s\", %s)\r\n"%(line, "        ", tag, para))
+                    else:
+                        new_file_content += ("%s%srequest(\"%s\", %s)\r\n"%(line, "        ", tag, para))
 
             last_line = line
     return new_file_content
 
 files = get_api_files()
 for file in files:
-    with open('t_'+file, 'w', encoding='UTF-8') as f:
-        f.write("class led():\n"+create_from_file(file)) 
+    with open('../api_'+file, 'w', encoding='UTF-8') as f:
+        f.write(create_from_file(file)) 
