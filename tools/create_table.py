@@ -34,7 +34,7 @@ def create_from_file(file_name):
                     # func = line.split('(')[0]
                     func = re.search(r'\s(\w*)\(', line).group(0)[1:-1]
                     m = hashlib.md5()
-                    m.update(func.encode("utf-8"))
+                    m.update((class_name+'.'+func).encode("utf-8"))
                     tag = m.hexdigest()
                     new_file_content += ('"%s": {"key":None, "obj":cell_item("%s", "%s.%s", (), %s)},\n'%(tag, tag, class_name, func, False))
 

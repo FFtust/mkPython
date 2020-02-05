@@ -30,6 +30,7 @@ def create_from_file(file_name):
             # get class
             ret = re.match(r'class(.*):', line)
             if ret:
+                class_name = re.search(r'(\S*)_c', line).group(0)[0:-2]
                 new_file_content += '\r\n'
                 new_file_content += (ret.group(0) + '\r\n')
             
@@ -37,7 +38,7 @@ def create_from_file(file_name):
                 ret = re.search(r'(.*)def(.*):', line)
                 if ret:
                     func = re.search(r'\s(\w*)\(', line).group(0)[1:-1]
-                    tag = get_hash(func)
+                    tag = get_hash((class_name+'.'+func))
 
                     para_s = re.search(r'\((.*)\):', line).group(0)[:-1]
                     para_s = para_s.split(",")

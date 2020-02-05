@@ -90,6 +90,7 @@ class database_c():
         if tag in self.data_tag:
             if not self.data_tag[tag]['obj'].subscribed_flag:
                 self.data_tag[tag]['obj'].data_new_flag = False
+                print(self.create_subcribe_frame(self.data_tag[tag]))
                 self.protocol.send_protocol(self.create_subcribe_frame(self.data_tag[tag]))
                 self.data_tag[tag]['obj'].wait_data_new()
                 

@@ -15,7 +15,7 @@ for item in table_halocode_tag:
     key_index += 1
 
 engine.database.table_key.update(table_halocode_key)
-
+print(engine.database.table_key[19]["obj"].tag)
 uart = link.commu_uart.uart_link(["COM0", 115200])
 
 protocol = engine.protocol.F3F4.F3F4_frame()
