@@ -54,9 +54,3 @@ for file in files:
 
         f.write("from engine.base_structure import cell_item\r\n\r\n"+"table_halocode_tag = \\\n{\n"+create_from_file(file) + '}') 
         create_from_file(file)
-
-# table_halocode_tag = \
-# {
-#     "T1": {"key":1, "obj":cell_item("T1", "halo.button.is_pressed", (), False)},
-#     "T2": {"key":2, "obj":cell_item("T2", "led.show_all", (0,0,0), None)},
-# }

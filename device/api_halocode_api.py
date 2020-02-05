@@ -49,7 +49,7 @@ class button_c():
         request("2eacefd9a69c9d858e68ad3e94691bf9", ())
 
     def is_pressed(self, index = 0):
-        return get_value("53826c458e60223a09b69fa64eb8d251", ( index))
+        return get_value("53826c458e60223a09b69fa64eb8d251", ())
 
 led = led_c()
 button = button_c()

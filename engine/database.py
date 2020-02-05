@@ -7,14 +7,14 @@ from engine.base_structure import cell_item
 
 table_tag = \
 {
-    "T1": {"key":1, "obj":cell_item("T1", "halo.button.is_pressed", (), False)},
-    "T2": {"key":2, "obj":cell_item("T2", "led.show_all", (0,0,0), None)},
+    # "T1": {"key":1, "obj":cell_item("T1", "halo.button.is_pressed", (), False)},
+    # "T2": {"key":2, "obj":cell_item("T2", "led.show_all", (0,0,0), None)},
 }
 
 table_key = \
 {
-    1: {"tag":"T1", "obj":table_tag["T1"]['obj']},
-    2: {"tag":"T2", "obj":table_tag["T2"]['obj']}
+    # 1: {"tag":"T1", "obj":table_tag["T1"]['obj']},
+    # 2: {"tag":"T2", "obj":table_tag["T2"]['obj']}
 }
 
 class subscribe_item_structure_c():

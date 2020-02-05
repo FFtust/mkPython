@@ -6,6 +6,16 @@ import link.commu_uart
 from device.table_halocode_api import table_halocode_tag
 engine.database.table_tag.update(table_halocode_tag)
 
+table_halocode_key = {}
+
+key_index = 0
+for item in table_halocode_tag:
+    table_halocode_tag[item]['key'] = key_index 
+    table_halocode_key.update({key_index: {"tag":item, "obj":table_halocode_tag[item]["obj"]}})
+    key_index += 1
+
+engine.database.table_key.update(table_halocode_key)
+print(engine.database.table_key)
 
 uart = link.commu_uart.uart_link(["COM0", 115200])
 
