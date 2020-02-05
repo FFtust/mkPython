@@ -1,9 +1,9 @@
-.. halocode documentation master file, created by
-   sphinx-quickstart on Wed Feb  5 15:04:00 2020.
+.. doc_test documentation master file, created by
+   sphinx-quickstart on Sun Feb  2 11:45:19 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to halocode's documentation!
+Welcome to doc_test's documentation!
 ====================================
 
 .. toctree::

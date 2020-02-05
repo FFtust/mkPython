@@ -168,3 +168,342 @@ class button_c():
         """
 
         pass
+
+class touchpad0_c(object):
+    def __init__(self, touchpad_id = 0):
+        pass
+
+    # __fun_type__: read
+    def is_touched(self):
+        """检测触摸状态.
+
+        检测触摸按键0是否被触发
+
+        Args:
+            无
+        Returns:
+            bool        
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_threshold(self, value):
+        """设置触摸灵敏度阈值.
+
+        设置触摸按键0的灵敏度阈值
+
+        Args:
+            value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏
+        Returns:
+            None       
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_sensitivity(self, level):
+        """设置触摸灵敏度等级.
+
+        设置触摸按键0的灵敏度等级
+
+        Args:
+            level (str): "high"/"middle"/"low"
+        Returns:
+            None
+        """
+        pass
+
+    # __fun_type__: read
+    def get_value(self):
+        """获取触摸值.
+
+        获取触摸按键0的模拟值，随外界状态变化而变化。
+        正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+        板子的值会超出这个范围。
+
+        Args:
+            无
+        Returns:
+            int (0 ~ 100): 不同板子情况不同    
+        """
+        pass
+
+class touchpad1_c(object):
+    def __init__(self, touchpad_id = 0):
+        pass
+
+    # __fun_type__: read
+    def is_touched(self):
+        """检测触摸状态.
+
+        检测触摸按键1是否被触发
+
+        Args:
+            无
+        Returns:
+            bool        
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_threshold(self, value):
+        """设置触摸灵敏度阈值.
+
+        设置触摸按键1的灵敏度阈值
+
+        Args:
+            value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏
+        Returns:
+            None       
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_sensitivity(self, level):
+        """设置触摸灵敏度等级.
+
+        设置触摸按键1的灵敏度等级
+
+        Args:
+            level (str): "high"/"middle"/"low"
+        Returns:
+            None
+        """
+        pass
+
+    # __fun_type__: read
+    def get_value(self):
+        """获取触摸值.
+
+        获取触摸按键1的模拟值，随外界状态变化而变化。
+        正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+        板子的值会超出这个范围。
+
+        Args:
+            无
+        Returns:
+            int (0 ~ 100): 不同板子情况不同    
+        """
+        pass
+
+class touchpad2_c(object):
+    def __init__(self, touchpad_id = 0):
+        pass
+
+    # __fun_type__: read
+    def is_touched(self):
+        """检测触摸状态.
+
+        检测触摸按键2是否被触发
+
+        Args:
+            无
+        Returns:
+            bool        
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_threshold(self, value):
+        """设置触摸灵敏度阈值.
+
+        设置触摸按键2的灵敏度阈值
+
+        Args:
+            value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏
+        Returns:
+            None       
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_sensitivity(self, level):
+        """设置触摸灵敏度等级.
+
+        设置触摸按键2的灵敏度等级
+
+        Args:
+            level (str): "high"/"middle"/"low"
+        Returns:
+            None
+        """
+        pass
+
+    # __fun_type__: read
+    def get_value(self):
+        """获取触摸值.
+
+        获取触摸按键2的模拟值，随外界状态变化而变化。
+        正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+        板子的值会超出这个范围。
+
+        Args:
+            无
+        Returns:
+            int (0 ~ 100): 不同板子情况不同    
+        """
+        pass
+
+class touchpad3_c(object):
+    def __init__(self, touchpad_id = 0):
+        pass
+
+    # __fun_type__: read
+    def is_touched(self):
+        """检测触摸状态.
+
+        检测触摸按键3是否被触发
+
+        Args:
+            无
+        Returns:
+            bool        
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_threshold(self, value):
+        """设置触摸灵敏度阈值.
+
+        设置触摸按键3的灵敏度阈值
+
+        Args:
+            value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏
+        Returns:
+            None       
+        """
+        pass
+
+    # __fun_type__: write
+    def set_touch_sensitivity(self, level):
+        """设置触摸灵敏度等级.
+
+        设置触摸按键3的灵敏度等级
+
+        Args:
+            level (str): "high"/"middle"/"low"
+        Returns:
+            None
+        """
+        pass
+
+    # __fun_type__: read
+    def get_value(self):
+        """获取触摸值.
+
+        获取触摸按键3的模拟值，随外界状态变化而变化。
+        正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+        板子的值会超出这个范围。
+
+        Args:
+            无
+        Returns:
+            int: 0 ~ 100; 不同板子情况不同    
+        """
+        pass
+
+class microphone():
+    def __init__(self):
+        pass
+
+    # __fun_type__: read
+    def get_loudness(self):
+        """获取音量值.
+
+        获取通过麦克风计算得到的音量值。
+
+        Args:
+            无
+        Returns:
+            int : 0 ~ 100    
+        """
+        pass       
+
+class motion_sensor(object):
+    def __init__(self):
+        pass
+    # __fun_type__: read
+    def get_acceleration(self, axis):
+        """获取音量值.
+
+        获取三轴加速度分量
+
+        Args:
+            axis (str): 'x'/'y'/'z'
+        Returns:
+            float : -2~2; 单位： g   
+        """
+        pass       
+
+    # __fun_type__: read
+    def get_gyroscope(self, axis):
+        """获取角速度.
+
+        获取三轴角速度分量
+
+        Args:
+            axis (str): 'x'/'y'/'z'
+        Returns:
+            float : 无限制; 单位： °/s
+        """
+        pass
+    # __fun_type__: read
+    def get_rotation(self, axis):
+        """获取旋转的角度.
+
+        获取三轴旋转的角度，逆时针角度为正。该值存在积累误差，请使用“reset_rotation” 函数校准。
+
+        Args:
+            axis (str): 'x'/'y'/'z'
+        Returns:
+            float : 无限制; 单位： °/s
+        """
+        pass
+
+    # __fun_type__: read
+    def reset_rotation(self, axis = "all"):
+        pass
+    # __fun_type__: read
+    def is_shaked(self):
+        pass
+    # __fun_type__: read
+    def is_shaken(self):
+        pass
+    # __fun_type__: read
+    def get_shake_strength(self):
+        pass
+    # __fun_type__: read
+    def is_tilted_left(self):
+        pass
+    # __fun_type__: read
+    def is_tilted_right(self):
+        pass
+    # __fun_type__: read
+    def is_arrow_up(self):
+        pass
+    # __fun_type__: read
+    def is_arrow_down(self):
+        pass
+    # __fun_type__: read
+    def is_led_ring_up(self):
+        pass
+    # __fun_type__: read
+    def is_led_ring_down(self):
+        pass
+    # __fun_type__: read
+    def is_rotate_clockwise(self):
+        pass
+    # __fun_type__: read
+    def is_rotate_anticlockwise(self):
+        pass
+    # __fun_type__: read
+    def is_free_fall(self):
+        pass
+    # __fun_type__: read
+    def get_pitch(self):
+        pass
+    # __fun_type__: read
+    def get_roll(self):
+        pass
+    # __fun_type__: read
+    def get_yaw(self):
+        pass  
