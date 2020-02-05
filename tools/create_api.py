@@ -53,4 +53,4 @@ def create_from_file(file_name):
 files = get_api_files()
 for file in files:
     with open('../api_'+file, 'w', encoding='UTF-8') as f:
-        f.write(create_from_file(file)) 
+        f.write("import time\r\nfrom engine.interface import get_value, request\r\n\r\n"+create_from_file(file)) 

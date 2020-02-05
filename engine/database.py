@@ -120,10 +120,13 @@ class database_c():
 
     def update_para_by_tag(self, tag, para = None):
         if tag in self.data_tag:
+            print("111", tag, para)
             self.data_tag[tag]['obj'].update_parameters(para)
 
         if self.protocol:
             # print(self.create_frame(self.data_tag[tag]))
+            print("12222", self.create_frame(self.data_tag[tag]))
+   
             self.protocol.send_protocol(self.create_frame(self.data_tag[tag]))
 
     def update_para_by_key(self, key, para = None):

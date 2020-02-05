@@ -22,14 +22,21 @@ def create_from_file(file_name):
     last_line = ""
     with open(file_name, 'r', encoding='UTF-8') as f:
         for line in f: 
-            ret = re.search(r'(.*)def(.*):', line)
+            # get class
+            ret = re.match(r'class(.*):', line)
             if ret:
-                # func = line.split('(')[0]
-                func = re.search(r'\s(\w*)\(', line).group(0)[1:-1]
-                m = hashlib.md5()
-                m.update(func.encode("utf-8"))
-                tag = m.hexdigest()
-                new_file_content += ('"%s": {"key":None, "obj":cell_item("%s", "%s", (), %s)},\n'%(tag, tag, func, False))
+                class_name = re.search(r'(\S*)_c', line).group(0)[0:-2]
+                print("class_name", class_name)
+            
+            else:
+                ret = re.search(r'(.*)def(.*):', line)
+                if ret:
+                    # func = line.split('(')[0]
+                    func = re.search(r'\s(\w*)\(', line).group(0)[1:-1]
+                    m = hashlib.md5()
+                    m.update(func.encode("utf-8"))
+                    tag = m.hexdigest()
+                    new_file_content += ('"%s": {"key":None, "obj":cell_item("%s", "%s.%s", (), %s)},\n'%(tag, tag, class_name, func, False))
 
 
             last_line = line
