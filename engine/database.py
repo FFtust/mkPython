@@ -56,7 +56,6 @@ class database_c():
         '''
         self.subscribe_item.set_frame(frame)
         obj = self.subscribe_item.get_json_obj()
-        print("OOO", obj)
         for item in obj:
             if item in self.data_key:
                 self.data_key[item]['obj'].update_value(obj[item])
@@ -120,13 +119,10 @@ class database_c():
 
     def update_para_by_tag(self, tag, para = None):
         if tag in self.data_tag:
-            print("111", tag, para)
             self.data_tag[tag]['obj'].update_parameters(para)
 
         if self.protocol:
-            # print(self.create_frame(self.data_tag[tag]))
-            print("12222", self.create_frame(self.data_tag[tag]))
-   
+            # print(self.create_frame(self.data_tag[tag]))   
             self.protocol.send_protocol(self.create_frame(self.data_tag[tag]))
 
     def update_para_by_key(self, key, para = None):

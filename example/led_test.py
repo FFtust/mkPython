@@ -1,10 +1,7 @@
 import adapter.halo
 adapter.halo.set_channel("COM3")
 
-from device.api_halocode import led_c, button_c
-
-led = led_c()
-button = button_c() 
+from device.api_halocode_api import led, button 
 
 import time,math
 a = 0

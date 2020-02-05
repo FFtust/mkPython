@@ -3,7 +3,7 @@ import engine.database
 
 import link.commu_uart
 
-from device.table_halocode_api import table_halocode_tag
+from device.table_halocode import table_halocode_tag
 engine.database.table_tag.update(table_halocode_tag)
 
 table_halocode_key = {}
@@ -15,7 +15,6 @@ for item in table_halocode_tag:
     key_index += 1
 
 engine.database.table_key.update(table_halocode_key)
-print(engine.database.table_key)
 
 uart = link.commu_uart.uart_link(["COM0", 115200])
 
