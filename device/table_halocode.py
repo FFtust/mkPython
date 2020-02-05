@@ -1,5 +1,7 @@
-from engine.base_structure import cell_item
-
+from engine.base_structure import cell_item
+
+
+
 table_halocode_tag = \
 {
 "f4f2cdc3a4ed04256d2e0b12cec89fc7": {"key":None, "obj":cell_item("f4f2cdc3a4ed04256d2e0b12cec89fc7", "led.__init__", (), False)},
@@ -16,22 +18,22 @@ table_halocode_tag = \
 "7052d3b4202ecfa2e398a35fe6bfa83b": {"key":None, "obj":cell_item("7052d3b4202ecfa2e398a35fe6bfa83b", "button.__init__", (), False)},
 "071f15bdd29f54daa4d0d6e244b31fe7": {"key":None, "obj":cell_item("071f15bdd29f54daa4d0d6e244b31fe7", "button.is_pressed", (), False)},
 "d0ec7b5048388016d21d52a2a399abef": {"key":None, "obj":cell_item("d0ec7b5048388016d21d52a2a399abef", "touchpad0.__init__", (), False)},
-"f28c95e27c689be70a83e1f9776cc8e2": {"key":None, "obj":cell_item("f28c95e27c689be70a83e1f9776cc8e2", "touchpad0.is_touched", (), False)},
+"f28c95e27c689be70a83e1f9776cc8e2": {"key":None, "obj":cell_item("f28c95e27c689be70a83e1f9776cc8e2", "pin0.is_touched", (), False)},
 "0aee33b41b57a1a3a326fabe5062538c": {"key":None, "obj":cell_item("0aee33b41b57a1a3a326fabe5062538c", "touchpad0.set_touch_threshold", (), False)},
 "03a628307601332a55f13fd4424f15eb": {"key":None, "obj":cell_item("03a628307601332a55f13fd4424f15eb", "touchpad0.set_touch_sensitivity", (), False)},
 "5f0cadda9f806e01f88da8b87559cb6e": {"key":None, "obj":cell_item("5f0cadda9f806e01f88da8b87559cb6e", "touchpad0.get_value", (), False)},
 "41d0023c5e2607e5e1d04911d4d69d75": {"key":None, "obj":cell_item("41d0023c5e2607e5e1d04911d4d69d75", "touchpad1.__init__", (), False)},
-"d1d4308dd5d22c17d3966c47ccd60f70": {"key":None, "obj":cell_item("d1d4308dd5d22c17d3966c47ccd60f70", "touchpad1.is_touched", (), False)},
+"d1d4308dd5d22c17d3966c47ccd60f70": {"key":None, "obj":cell_item("d1d4308dd5d22c17d3966c47ccd60f70", "halo.pin1.is_touched", (), False)},
 "b8af32fa7771f6cfdebe0af870248a58": {"key":None, "obj":cell_item("b8af32fa7771f6cfdebe0af870248a58", "touchpad1.set_touch_threshold", (), False)},
 "9a4fa1a80cac2513dc07754668aa3de1": {"key":None, "obj":cell_item("9a4fa1a80cac2513dc07754668aa3de1", "touchpad1.set_touch_sensitivity", (), False)},
 "c9f686cc9879592922d3f0516c62c0ca": {"key":None, "obj":cell_item("c9f686cc9879592922d3f0516c62c0ca", "touchpad1.get_value", (), False)},
 "c45179bf8c1b41cff1b8212150a7cb66": {"key":None, "obj":cell_item("c45179bf8c1b41cff1b8212150a7cb66", "touchpad2.__init__", (), False)},
-"186334acb28cdef742ee9b481762f6d6": {"key":None, "obj":cell_item("186334acb28cdef742ee9b481762f6d6", "touchpad2.is_touched", (), False)},
+"186334acb28cdef742ee9b481762f6d6": {"key":None, "obj":cell_item("186334acb28cdef742ee9b481762f6d6", "pin2.is_touched", (), False)},
 "dd2358abccfdd6df3fea1ad60eb7034f": {"key":None, "obj":cell_item("dd2358abccfdd6df3fea1ad60eb7034f", "touchpad2.set_touch_threshold", (), False)},
 "294cb80724362dd06337f1c796738802": {"key":None, "obj":cell_item("294cb80724362dd06337f1c796738802", "touchpad2.set_touch_sensitivity", (), False)},
 "e92dfe510847bbb1c6952251a0772419": {"key":None, "obj":cell_item("e92dfe510847bbb1c6952251a0772419", "touchpad2.get_value", (), False)},
 "8d4e58f23f2af227ef4c7d62d724a143": {"key":None, "obj":cell_item("8d4e58f23f2af227ef4c7d62d724a143", "touchpad3.__init__", (), False)},
-"4a059a33204d77954ecc2d9dcc3973a2": {"key":None, "obj":cell_item("4a059a33204d77954ecc2d9dcc3973a2", "touchpad3.is_touched", (), False)},
+"4a059a33204d77954ecc2d9dcc3973a2": {"key":None, "obj":cell_item("4a059a33204d77954ecc2d9dcc3973a2", "pin3.is_touched", (), False)},
 "30711506f4ff8ba45f41139629c59516": {"key":None, "obj":cell_item("30711506f4ff8ba45f41139629c59516", "touchpad3.set_touch_threshold", (), False)},
 "6e9673465d792ac0071a6b259fc730cc": {"key":None, "obj":cell_item("6e9673465d792ac0071a6b259fc730cc", "touchpad3.set_touch_sensitivity", (), False)},
 "22b1f497925330eeb3a7c7eeae24736e": {"key":None, "obj":cell_item("22b1f497925330eeb3a7c7eeae24736e", "touchpad3.get_value", (), False)},

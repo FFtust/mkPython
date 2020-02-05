@@ -9,6 +9,9 @@ def delay_sync(t = 0.015):
 subscribe - publish communication 
 '''
 def get_value(tag, para = None):
+    if not isinstance(para, tuple):
+        para = (para, )
+
     delay_sync()
     return database.get_value_by_tag(tag, para)
 
@@ -17,6 +20,9 @@ def get_value(tag, para = None):
 Real-time communication
 '''
 def request(tag, para = None, wait_time = None):
+    if not isinstance(para, tuple):
+        para = (para, )
+
     if wait_time == None:
         database.update_para_by_tag(tag, para)
     else:

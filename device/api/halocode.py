@@ -6,7 +6,7 @@ class led_c():
     def __init__(self):
         pass
     # __fun_type__: write
-    def show_all(self, r, g, b, percentage):
+    def show_all(self, r, g, b, percentage = 100):
         """控制所有led灯的状态.
 
         所有灯亮同样的状态，使用r,g,b分量控制
@@ -37,7 +37,7 @@ class led_c():
         """
         pass
     # __fun_type__: write
-    def move(self, offset):
+    def move(self, offset = 1):
         """ LED 矩阵整体偏移.
 
         整个LED矩阵旋转顺时针旋转offset个位置，offset为负值时，逆时针旋转.

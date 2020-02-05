@@ -5,12 +5,12 @@ from engine.interface import get_value, request
 class led_c():
     def __init__(self):
         request("f4f2cdc3a4ed04256d2e0b12cec89fc7", ())
-    def show_all(self, r, g, b, percentage):
-        request("16d39837918e0da88b3a83036286ec49", ( r, g, b, percentage))
+    def show_all(self, r, g, b, percentage = 100):
+        request("16d39837918e0da88b3a83036286ec49", ( r, g, b, percentage ))
     def show_single(self, index, r, g, b):
         request("4717c56f3741f1b9d0e82f630031a2fc", ( index, r, g, b))
-    def move(self, offset):
-        request("3164e897ffb74c0994c83a84f4938989", ( offset))
+    def move(self, offset = 1):
+        request("3164e897ffb74c0994c83a84f4938989", ( offset ))
     def off_single(self, led_id):
         request("d057d4e05265152f591947da67e56cdf", ( led_id))
     def off_all(self):
