@@ -46,7 +46,7 @@ class database_c():
         if frame[0] == 0x29:
             self.__process_subscribe(frame[1:])
         elif frame[0] == 0x28:
-            console.error("process 0x28 frame %s" %frame)
+            console.debug("process 0x28 frame %s" %frame)
             self.__process_realtime(frame[1:])
 
     def __process_subscribe(self, frame):
@@ -88,9 +88,12 @@ class database_c():
 
     def get_value(self, tag, para = None):
         if tag in self.data_tag:
-            self.data_tag[tag]['obj'].data_new_flag = False
-            self.protocol.send_protocol(self.create_subcribe_frame(self.data_tag[tag]))
-            self.data_tag[tag]['obj'].wait_data_new()
+            if not self.data_tag[tag]['obj'].subscribed_flag:
+                self.data_tag[tag]['obj'].data_new_flag = False
+                self.protocol.send_protocol(self.create_subcribe_frame(self.data_tag[tag]))
+                self.data_tag[tag]['obj'].wait_data_new()
+                
+                self.data_tag[tag]['obj'].subscribed_flag = True
 
             return self.data_tag[tag]['obj'].get_value()
         else:

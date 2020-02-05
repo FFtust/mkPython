@@ -81,7 +81,7 @@ class F3F4_frame():
     def parse_data_stream(self, data, d_info = None):
         self.__fsm(data)
         if self.frame_list:
-            print(self.frame_list)
+            console.debug("%s"%self.frame_list)
             for item in self.frame_list:
                 for process in self.frame_process_list:
                     ret = process.process(item, d_info)
@@ -181,5 +181,5 @@ class F3F4_frame():
     def send_protocol(self, package):
         console.debug("send_protocol %s"%package)
         if self.link:
-            print_frame(self.create_frame(package))
+            # print_frame(self.create_frame(package))
             self.link.write(self.create_frame(package))

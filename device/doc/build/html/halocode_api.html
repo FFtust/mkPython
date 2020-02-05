@@ -1,35 +1,150 @@
 
+
 <!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>halocode_api module &mdash; doc_test 1.0 文档</title>
+  
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
-  <head>
-    <meta charset="utf-8" />
-    <title>halocode_api module &#8212; doc_test 1.0 文档</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> doc_test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">halocode_api module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">doc_test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>halocode_api module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/halocode_api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-halocode_api">
 <span id="halocode-api-module"></span><h1>halocode_api module<a class="headerlink" href="#module-halocode_api" title="永久链接至标题">¶</a></h1>
@@ -40,17 +155,16 @@
 <dl class="method">
 <dt id="halocode_api.button_c.is_pressed">
 <code class="sig-name descname">is_pressed</code><span class="sig-paren">(</span><em class="sig-param">index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.button_c.is_pressed" title="永久链接至目标">¶</a></dt>
-<dd><p>function description.</p>
-<p>is button status actived.</p>
+<dd><p>按键是否被按下.</p>
+<p>检测按键的状态是否被按下. 只有一个按键时，默认不填</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – 0~ ; button index</p>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – 0~ ; 按键编号</p>
 </dd>
 <dt class="field-even">返回</dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
-<p>Raises:</p>
 </dd></dl>
 
 </dd></dl>
@@ -61,33 +175,150 @@
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>led matrix</p>
 <dl class="method">
-<dt id="halocode_api.led_c.move">
-<code class="sig-name descname">move</code><span class="sig-paren">(</span><em class="sig-param">offset</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.move" title="永久链接至目标">¶</a></dt>
-<dd><p>function description.</p>
-<p>led matrix move with offset.</p>
+<dt id="halocode_api.led_c.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.clear" title="永久链接至目标">¶</a></dt>
+<dd><p>熄灭所有LED灯.</p>
+<p>功能同 off_all.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>offset</strong> (<em>int</em>) – no limit; offset of led index</p>
+<dd class="field-odd"><p><strong>无</strong> – </p>
 </dd>
 <dt class="field-even">返回</dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
-<p>Raises:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode_api.led_c.move">
+<code class="sig-name descname">move</code><span class="sig-paren">(</span><em class="sig-param">offset</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.move" title="永久链接至目标">¶</a></dt>
+<dd><p>LED 矩阵整体偏移.</p>
+<p>整个LED矩阵旋转顺时针旋转offset个位置，offset为负值时，逆时针旋转.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>offset</strong> (<em>int</em>) – no limit; 偏移值</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode_api.led_c.off_all">
+<code class="sig-name descname">off_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.off_all" title="永久链接至目标">¶</a></dt>
+<dd><p>熄灭所有LED灯.</p>
+<p>设置12颗灯全部为为熄灭状态.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>无</strong> – </p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode_api.led_c.off_single">
+<code class="sig-name descname">off_single</code><span class="sig-paren">(</span><em class="sig-param">led_id</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.off_single" title="永久链接至目标">¶</a></dt>
+<dd><p>熄灭单颗LED灯.</p>
+<p>设置12颗灯中的某一颗灯为熄灭状态.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>led_id</strong> (<em>int</em>) – 1 ~ 12; led 编号</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode_api.led_c.ring_graph">
+<code class="sig-name descname">ring_graph</code><span class="sig-paren">(</span><em class="sig-param">pct</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.ring_graph" title="永久链接至目标">¶</a></dt>
+<dd><p>设置led灯环状态.</p>
+<p>设置所有或者部分灯珠的颜色，颜色共有7中.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<em>str</em>) – 灯珠颜色，以空格划分</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – 无限制; 旋转偏移</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="halocode_api.led_c.show_all">
 <code class="sig-name descname">show_all</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em>, <em class="sig-param">percentage</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.show_all" title="永久链接至目标">¶</a></dt>
-<dd><p>control all the leds.</p>
-<p>set all leds with r/g/b components.</p>
+<dd><p>控制所有led灯的状态.</p>
+<p>所有灯亮同样的状态，使用r,g,b分量控制</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>r</strong> (<em>int</em>) – 0 ~ 255; color component abou red</p></li>
-<li><p><strong>g</strong> (<em>int</em>) – 0 ~ 255; color component abou green</p></li>
-<li><p><strong>b</strong> (<em>int</em>) – 0 ~ 255; color component abou blue</p></li>
-<li><p><strong>percentage</strong> (<em>int</em>) – 0 ~ 100; brightness percentage</p></li>
+<li><p><strong>r</strong> (<em>int</em>) – 0 ~ 255; 红色分量</p></li>
+<li><p><strong>g</strong> (<em>int</em>) – 0 ~ 255; 绿色分量</p></li>
+<li><p><strong>b</strong> (<em>int</em>) – 0 ~ 255; 蓝色分量</p></li>
+<li><p><strong>percentage</strong> (<em>int</em>) – 0 ~ 100; 亮度百分比</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode_api.led_c.show_animation">
+<code class="sig-name descname">show_animation</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.show_animation" title="永久链接至目标">¶</a></dt>
+<dd><p>显示LED动画.</p>
+<p>阻塞显示LED动画效果. 目前共内置 几种效果</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – LED动画名称；</p></li>
+<li><p><strong>wait</strong> (<em>bool</em>) – 是否阻塞显示</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode_api.led_c.show_full_color">
+<code class="sig-name descname">show_full_color</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.show_full_color" title="永久链接至目标">¶</a></dt>
+<dd><p>设置led灯环状态.</p>
+<p>设置所有或者部分灯珠的RGB值，共36字节.
+从1~12颗灯依次计算</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>list，tuple</em>) – 36字节数据</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – 无限制; 旋转偏移</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode_api.led_c.show_ring">
+<code class="sig-name descname">show_ring</code><span class="sig-paren">(</span><em class="sig-param">color</em>, <em class="sig-param">offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.show_ring" title="永久链接至目标">¶</a></dt>
+<dd><p>设置led灯环状态.</p>
+<p>设置所有或者部分灯珠的颜色，颜色共有7中.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<em>str</em>) – 灯珠颜色，以空格划分</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – 无限制; 旋转偏移</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -99,22 +330,21 @@
 <dl class="method">
 <dt id="halocode_api.led_c.show_single">
 <code class="sig-name descname">show_single</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode_api.led_c.show_single" title="永久链接至目标">¶</a></dt>
-<dd><p>control single led.</p>
-<p>set led which id is ‘index’ with r/g/b components.</p>
+<dd><p>控制单颗led灯的状态.</p>
+<p>使用r,g,b分量控制灯的状态</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>index</strong> (<em>int</em>) – 1 ~ 12; led index</p></li>
-<li><p><strong>r</strong> (<em>int</em>) – 0 ~ 255; color component abou red</p></li>
-<li><p><strong>g</strong> (<em>int</em>) – 0 ~ 255; color component abou green</p></li>
-<li><p><strong>b</strong> (<em>int</em>) – 0 ~ 255; color component abou blue</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – 1 ~ 12; led 编号</p></li>
+<li><p><strong>r</strong> (<em>int</em>) – 0 ~ 255; 红色分量</p></li>
+<li><p><strong>g</strong> (<em>int</em>) – 0 ~ 255; 绿色分量</p></li>
+<li><p><strong>b</strong> (<em>int</em>) – 0 ~ 255; 蓝色分量</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
-<p>Raises:</p>
 </dd></dl>
 
 </dd></dl>
@@ -122,66 +352,43 @@
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">doc_test</a></h1>
+          <footer>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, fftust
 
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
-
-<h3>导航</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">快速搜索</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="转向" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2020, fftust.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/halocode_api.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

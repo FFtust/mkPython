@@ -6,6 +6,6 @@ table_halocode_tag = \
 
 table_halocode_key = \
 {
-    "1": {"tag":"T1", "obj":table_halocode_tag["T1"]},
-    "2": {"tag":"T2", "obj":table_halocode_tag["T2"]}
+    1: {"tag":"T1", "obj":table_halocode_tag["T1"]},
+    2: {"tag":"T2", "obj":table_halocode_tag["T2"]}
 }

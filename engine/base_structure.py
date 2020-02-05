@@ -16,7 +16,7 @@ class cell_item():
         self.value = None
         self.data_new_flag = None
         self.data_update_callBack = []
-        self.subscribe_handle = None
+        self.subscribed_flag = False
         
         self.auto_subscribe_control_flag = True
         self.get_value_called_count = 0
@@ -24,7 +24,7 @@ class cell_item():
     def reset_status(self):
         self.value = None
         self.data_new_flag = None
-        self.subscribe_handle = []
+        self.subscribed_flag = False
         self.get_value_called_count = 0
         self.data_update_callBack = None
         self.auto_subscribe_control_flag = True

@@ -1,7 +1,7 @@
 from engine.database import database
 import time
 
-def delay_sync(t = 0.01):
+def delay_sync(t = 0.015):
     if t > 0:
         time.sleep(t)
 
