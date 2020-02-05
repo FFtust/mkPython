@@ -12,16 +12,17 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../api'))#指向src目录
+sys.path.insert(0, os.path.abspath('../../api'))
+
 
 # -- Project information -----------------------------------------------------
 
-project = 'doc_test'
+project = 'halocode'
 copyright = '2020, fftust'
 author = 'fftust'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = 'v1.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -34,8 +35,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.napoleon']
+    'sphinx.ext.mathjax']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -58,8 +58,7 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme = 'alabaster'
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'alabaster'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

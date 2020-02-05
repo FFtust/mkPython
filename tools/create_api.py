@@ -38,8 +38,16 @@ def create_from_file(file_name):
                 if ret:
                     func = re.search(r'\s(\w*)\(', line).group(0)[1:-1]
                     tag = get_hash(func)
-                    para = re.search(r'\((.*)\):', line).group(0)[:-1].replace("self,", "").replace("self", "")
 
+                    para_s = re.search(r'\((.*)\):', line).group(0)[:-1]
+                    para_s = para_s.split(",")
+                    for i in range(len(para_s)):
+                        if '=' in para_s[i]:
+                            para_s[i]  = para_s[i][ :para_s[i].index("=")]
+                            if i == len(para_s) -1:
+                                para_s[i] += ")"
+                    # para = re.search(r'\((.*)\):', line).group(0)[:-1].replace("self,", "").replace("self", "")
+                    para = ','.join(para_s).replace("self,", "").replace("self", "")
                     last = re.search(r"__fun_type__:(.*)read", last_line)
                     if last:
                         # print("%s%s%s"%(line, "        ", "get_vlue(\"a1\")"))

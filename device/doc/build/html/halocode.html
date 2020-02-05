@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>halocode module &#8212; halocode v1.0 文档</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-halocode">
+<span id="halocode-module"></span><h1>halocode module<a class="headerlink" href="#module-halocode" title="永久链接至标题">¶</a></h1>
+<dl class="class">
+<dt id="halocode.button_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">button_c</code><a class="headerlink" href="#halocode.button_c" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="halocode.button_c.is_pressed">
+<code class="sig-name descname">is_pressed</code><span class="sig-paren">(</span><em class="sig-param">index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.button_c.is_pressed" title="永久链接至目标">¶</a></dt>
+<dd><p>按键是否被按下.</p>
+<p>检测按键的状态是否被按下. 只有一个按键时，默认不填</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>index (int): 0~ ; 按键编号</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="halocode.led_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">led_c</code><a class="headerlink" href="#halocode.led_c" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>led matrix</p>
+<dl class="method">
+<dt id="halocode.led_c.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.clear" title="永久链接至目标">¶</a></dt>
+<dd><p>熄灭所有LED灯.</p>
+<p>功能同 off_all.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.move">
+<code class="sig-name descname">move</code><span class="sig-paren">(</span><em class="sig-param">offset</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.move" title="永久链接至目标">¶</a></dt>
+<dd><p>LED 矩阵整体偏移.</p>
+<p>整个LED矩阵旋转顺时针旋转offset个位置，offset为负值时，逆时针旋转.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>offset (int): no limit; 偏移值</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.off_all">
+<code class="sig-name descname">off_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.off_all" title="永久链接至目标">¶</a></dt>
+<dd><p>熄灭所有LED灯.</p>
+<p>设置12颗灯全部为为熄灭状态.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.off_single">
+<code class="sig-name descname">off_single</code><span class="sig-paren">(</span><em class="sig-param">led_id</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.off_single" title="永久链接至目标">¶</a></dt>
+<dd><p>熄灭单颗LED灯.</p>
+<p>设置12颗灯中的某一颗灯为熄灭状态.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>led_id (int): 1 ~ 12; led 编号</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.ring_graph">
+<code class="sig-name descname">ring_graph</code><span class="sig-paren">(</span><em class="sig-param">pct</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.ring_graph" title="永久链接至目标">¶</a></dt>
+<dd><p>设置led灯环状态.</p>
+<p>设置所有或者部分灯珠的颜色，颜色共有7中.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>color (str): 灯珠颜色，以空格划分
+offset (int): 无限制; 旋转偏移</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.show_all">
+<code class="sig-name descname">show_all</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em>, <em class="sig-param">percentage</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.show_all" title="永久链接至目标">¶</a></dt>
+<dd><p>控制所有led灯的状态.</p>
+<p>所有灯亮同样的状态，使用r,g,b分量控制</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>r (int): 0 ~ 255; 红色分量
+g (int): 0 ~ 255; 绿色分量
+b (int): 0 ~ 255; 蓝色分量
+percentage (int): 0 ~ 100; 亮度百分比</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.show_animation">
+<code class="sig-name descname">show_animation</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.show_animation" title="永久链接至目标">¶</a></dt>
+<dd><p>显示LED动画.</p>
+<p>阻塞显示LED动画效果. 目前共内置 几种效果</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): LED动画名称；
+wait (bool): 是否阻塞显示</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.show_full_color">
+<code class="sig-name descname">show_full_color</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.show_full_color" title="永久链接至目标">¶</a></dt>
+<dd><p>设置led灯环状态.</p>
+<p>设置所有或者部分灯珠的RGB值，共36字节.
+从1~12颗灯依次计算</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data (list，tuple): 36字节数据
+offset (int): 无限制; 旋转偏移</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.show_ring">
+<code class="sig-name descname">show_ring</code><span class="sig-paren">(</span><em class="sig-param">color</em>, <em class="sig-param">offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.show_ring" title="永久链接至目标">¶</a></dt>
+<dd><p>设置led灯环状态.</p>
+<p>设置所有或者部分灯珠的颜色，颜色共有7中.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>color (str): 灯珠颜色，以空格划分
+offset (int): 无限制; 旋转偏移</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.led_c.show_single">
+<code class="sig-name descname">show_single</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.show_single" title="永久链接至目标">¶</a></dt>
+<dd><p>控制单颗led灯的状态.</p>
+<p>使用r,g,b分量控制灯的状态</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>index (int): 1 ~ 12; led 编号
+r (int): 0 ~ 255; 红色分量
+g (int): 0 ~ 255; 绿色分量
+b (int): 0 ~ 255; 蓝色分量</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="halocode.microphone">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">microphone</code><a class="headerlink" href="#halocode.microphone" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="halocode.microphone.get_loudness">
+<code class="sig-name descname">get_loudness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.microphone.get_loudness" title="永久链接至目标">¶</a></dt>
+<dd><p>获取音量值.</p>
+<p>获取通过麦克风计算得到的音量值。</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>int : 0 ~ 100</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="halocode.motion_sensor">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">motion_sensor</code><a class="headerlink" href="#halocode.motion_sensor" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="halocode.motion_sensor.get_acceleration">
+<code class="sig-name descname">get_acceleration</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_acceleration" title="永久链接至目标">¶</a></dt>
+<dd><p>获取音量值.</p>
+<p>获取三轴加速度分量</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>axis (str): ‘x’/’y’/’z’</p>
+</dd>
+<dt>Returns:</dt><dd><p>float : -2~2; 单位： g</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.get_gyroscope">
+<code class="sig-name descname">get_gyroscope</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_gyroscope" title="永久链接至目标">¶</a></dt>
+<dd><p>获取角速度.</p>
+<p>获取三轴角速度分量</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>axis (str): ‘x’/’y’/’z’</p>
+</dd>
+<dt>Returns:</dt><dd><p>float : 无限制; 单位： °/s</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.get_pitch">
+<code class="sig-name descname">get_pitch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_pitch" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.get_roll">
+<code class="sig-name descname">get_roll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_roll" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.get_rotation">
+<code class="sig-name descname">get_rotation</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_rotation" title="永久链接至目标">¶</a></dt>
+<dd><p>获取旋转的角度.</p>
+<p>获取三轴旋转的角度，逆时针角度为正。该值存在积累误差，请使用“reset_rotation” 函数校准。</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>axis (str): ‘x’/’y’/’z’</p>
+</dd>
+<dt>Returns:</dt><dd><p>float : 无限制; 单位： °/s</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.get_shake_strength">
+<code class="sig-name descname">get_shake_strength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_shake_strength" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.get_yaw">
+<code class="sig-name descname">get_yaw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_yaw" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_arrow_down">
+<code class="sig-name descname">is_arrow_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_arrow_down" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_arrow_up">
+<code class="sig-name descname">is_arrow_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_arrow_up" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_free_fall">
+<code class="sig-name descname">is_free_fall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_free_fall" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_led_ring_down">
+<code class="sig-name descname">is_led_ring_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_led_ring_down" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_led_ring_up">
+<code class="sig-name descname">is_led_ring_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_led_ring_up" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_rotate_anticlockwise">
+<code class="sig-name descname">is_rotate_anticlockwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_rotate_anticlockwise" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_rotate_clockwise">
+<code class="sig-name descname">is_rotate_clockwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_rotate_clockwise" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_shaked">
+<code class="sig-name descname">is_shaked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_shaked" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_shaken">
+<code class="sig-name descname">is_shaken</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_shaken" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_tilted_left">
+<code class="sig-name descname">is_tilted_left</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_tilted_left" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.is_tilted_right">
+<code class="sig-name descname">is_tilted_right</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_tilted_right" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="halocode.motion_sensor.reset_rotation">
+<code class="sig-name descname">reset_rotation</code><span class="sig-paren">(</span><em class="sig-param">axis='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.reset_rotation" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="halocode.touchpad0_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad0_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad0_c" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="halocode.touchpad0_c.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad0_c.get_value" title="永久链接至目标">¶</a></dt>
+<dd><p>获取触摸值.</p>
+<p>获取触摸按键0的模拟值，随外界状态变化而变化。
+正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+板子的值会超出这个范围。</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>int (0 ~ 100): 不同板子情况不同</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad0_c.is_touched">
+<code class="sig-name descname">is_touched</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad0_c.is_touched" title="永久链接至目标">¶</a></dt>
+<dd><p>检测触摸状态.</p>
+<p>检测触摸按键0是否被触发</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad0_c.set_touch_sensitivity">
+<code class="sig-name descname">set_touch_sensitivity</code><span class="sig-paren">(</span><em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad0_c.set_touch_sensitivity" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度等级.</p>
+<p>设置触摸按键0的灵敏度等级</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>level (str): “high”/”middle”/”low”</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad0_c.set_touch_threshold">
+<code class="sig-name descname">set_touch_threshold</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad0_c.set_touch_threshold" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度阈值.</p>
+<p>设置触摸按键0的灵敏度阈值</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="halocode.touchpad1_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad1_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad1_c" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="halocode.touchpad1_c.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad1_c.get_value" title="永久链接至目标">¶</a></dt>
+<dd><p>获取触摸值.</p>
+<p>获取触摸按键1的模拟值，随外界状态变化而变化。
+正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+板子的值会超出这个范围。</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>int (0 ~ 100): 不同板子情况不同</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad1_c.is_touched">
+<code class="sig-name descname">is_touched</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad1_c.is_touched" title="永久链接至目标">¶</a></dt>
+<dd><p>检测触摸状态.</p>
+<p>检测触摸按键1是否被触发</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad1_c.set_touch_sensitivity">
+<code class="sig-name descname">set_touch_sensitivity</code><span class="sig-paren">(</span><em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad1_c.set_touch_sensitivity" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度等级.</p>
+<p>设置触摸按键1的灵敏度等级</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>level (str): “high”/”middle”/”low”</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad1_c.set_touch_threshold">
+<code class="sig-name descname">set_touch_threshold</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad1_c.set_touch_threshold" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度阈值.</p>
+<p>设置触摸按键1的灵敏度阈值</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="halocode.touchpad2_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad2_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad2_c" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="halocode.touchpad2_c.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad2_c.get_value" title="永久链接至目标">¶</a></dt>
+<dd><p>获取触摸值.</p>
+<p>获取触摸按键2的模拟值，随外界状态变化而变化。
+正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+板子的值会超出这个范围。</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>int (0 ~ 100): 不同板子情况不同</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad2_c.is_touched">
+<code class="sig-name descname">is_touched</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad2_c.is_touched" title="永久链接至目标">¶</a></dt>
+<dd><p>检测触摸状态.</p>
+<p>检测触摸按键2是否被触发</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad2_c.set_touch_sensitivity">
+<code class="sig-name descname">set_touch_sensitivity</code><span class="sig-paren">(</span><em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad2_c.set_touch_sensitivity" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度等级.</p>
+<p>设置触摸按键2的灵敏度等级</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>level (str): “high”/”middle”/”low”</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad2_c.set_touch_threshold">
+<code class="sig-name descname">set_touch_threshold</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad2_c.set_touch_threshold" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度阈值.</p>
+<p>设置触摸按键2的灵敏度阈值</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="halocode.touchpad3_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad3_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad3_c" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="halocode.touchpad3_c.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad3_c.get_value" title="永久链接至目标">¶</a></dt>
+<dd><p>获取触摸值.</p>
+<p>获取触摸按键3的模拟值，随外界状态变化而变化。
+正常情况下，触摸值在 0~100 范围内，但由于器件差异，个别
+板子的值会超出这个范围。</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: 0 ~ 100; 不同板子情况不同</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad3_c.is_touched">
+<code class="sig-name descname">is_touched</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad3_c.is_touched" title="永久链接至目标">¶</a></dt>
+<dd><p>检测触摸状态.</p>
+<p>检测触摸按键3是否被触发</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>无</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad3_c.set_touch_sensitivity">
+<code class="sig-name descname">set_touch_sensitivity</code><span class="sig-paren">(</span><em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad3_c.set_touch_sensitivity" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度等级.</p>
+<p>设置触摸按键3的灵敏度等级</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>level (str): “high”/”middle”/”low”</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="halocode.touchpad3_c.set_touch_threshold">
+<code class="sig-name descname">set_touch_threshold</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad3_c.set_touch_threshold" title="永久链接至目标">¶</a></dt>
+<dd><p>设置触摸灵敏度阈值.</p>
+<p>设置触摸按键3的灵敏度阈值</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value (float): 0 ~ 1; 触摸灵敏度，值越大，越不灵敏</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">halocode</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, fftust.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/halocode.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

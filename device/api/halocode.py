@@ -170,7 +170,7 @@ class button_c():
         pass
 
 class touchpad0_c(object):
-    def __init__(self, touchpad_id = 0):
+    def __init__(self, touchpad_id):
         pass
 
     # __fun_type__: read
@@ -228,7 +228,7 @@ class touchpad0_c(object):
         pass
 
 class touchpad1_c(object):
-    def __init__(self, touchpad_id = 0):
+    def __init__(self, touchpad_id):
         pass
 
     # __fun_type__: read
@@ -286,7 +286,7 @@ class touchpad1_c(object):
         pass
 
 class touchpad2_c(object):
-    def __init__(self, touchpad_id = 0):
+    def __init__(self, touchpad_id):
         pass
 
     # __fun_type__: read
@@ -344,7 +344,7 @@ class touchpad2_c(object):
         pass
 
 class touchpad3_c(object):
-    def __init__(self, touchpad_id = 0):
+    def __init__(self, touchpad_id):
         pass
 
     # __fun_type__: read
@@ -401,7 +401,7 @@ class touchpad3_c(object):
         """
         pass
 
-class microphone():
+class microphone_c():
     def __init__(self):
         pass
 
@@ -418,7 +418,7 @@ class microphone():
         """
         pass       
 
-class motion_sensor(object):
+class motion_sensor_c(object):
     def __init__(self):
         pass
     # __fun_type__: read
