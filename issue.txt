@@ -3,3 +3,13 @@
    且将阻塞型API加入到高阶API中。
 
    
+2. 上传 pypi test 环境：
+pip install --user --upgrade setuptools wheel
+pip install --user --upgrade twine
+
+setup.py sdist bdist_wheel
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps mkPython
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps mkPython

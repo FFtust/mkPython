@@ -1,35 +1,150 @@
 
+
 <!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>halocode module &mdash; halocode v1.0 文档</title>
+  
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
-  <head>
-    <meta charset="utf-8" />
-    <title>halocode module &#8212; halocode v1.0 文档</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> halocode
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">halocode module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">halocode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>halocode module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/halocode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-halocode">
 <span id="halocode-module"></span><h1>halocode module<a class="headerlink" href="#module-halocode" title="永久链接至标题">¶</a></h1>
@@ -72,7 +187,7 @@
 
 <dl class="method">
 <dt id="halocode.led_c.move">
-<code class="sig-name descname">move</code><span class="sig-paren">(</span><em class="sig-param">offset</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.move" title="永久链接至目标">¶</a></dt>
+<code class="sig-name descname">move</code><span class="sig-paren">(</span><em class="sig-param">offset=1</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.move" title="永久链接至目标">¶</a></dt>
 <dd><p>LED 矩阵整体偏移.</p>
 <p>整个LED矩阵旋转顺时针旋转offset个位置，offset为负值时，逆时针旋转.</p>
 <dl class="simple">
@@ -125,7 +240,7 @@ offset (int): 无限制; 旋转偏移</p>
 
 <dl class="method">
 <dt id="halocode.led_c.show_all">
-<code class="sig-name descname">show_all</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em>, <em class="sig-param">percentage</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.show_all" title="永久链接至目标">¶</a></dt>
+<code class="sig-name descname">show_all</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em>, <em class="sig-param">percentage=100</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.led_c.show_all" title="永久链接至目标">¶</a></dt>
 <dd><p>控制所有led灯的状态.</p>
 <p>所有灯亮同样的状态，使用r,g,b分量控制</p>
 <dl class="simple">
@@ -201,12 +316,12 @@ b (int): 0 ~ 255; 蓝色分量</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="halocode.microphone">
-<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">microphone</code><a class="headerlink" href="#halocode.microphone" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.microphone_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">microphone_c</code><a class="headerlink" href="#halocode.microphone_c" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
-<dt id="halocode.microphone.get_loudness">
-<code class="sig-name descname">get_loudness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.microphone.get_loudness" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.microphone_c.get_loudness">
+<code class="sig-name descname">get_loudness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.microphone_c.get_loudness" title="永久链接至目标">¶</a></dt>
 <dd><p>获取音量值.</p>
 <p>获取通过麦克风计算得到的音量值。</p>
 <dl class="simple">
@@ -220,12 +335,12 @@ b (int): 0 ~ 255; 蓝色分量</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="halocode.motion_sensor">
-<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">motion_sensor</code><a class="headerlink" href="#halocode.motion_sensor" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c">
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">motion_sensor_c</code><a class="headerlink" href="#halocode.motion_sensor_c" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
-<dt id="halocode.motion_sensor.get_acceleration">
-<code class="sig-name descname">get_acceleration</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_acceleration" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.get_acceleration">
+<code class="sig-name descname">get_acceleration</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.get_acceleration" title="永久链接至目标">¶</a></dt>
 <dd><p>获取音量值.</p>
 <p>获取三轴加速度分量</p>
 <dl class="simple">
@@ -237,8 +352,8 @@ b (int): 0 ~ 255; 蓝色分量</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.get_gyroscope">
-<code class="sig-name descname">get_gyroscope</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_gyroscope" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.get_gyroscope">
+<code class="sig-name descname">get_gyroscope</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.get_gyroscope" title="永久链接至目标">¶</a></dt>
 <dd><p>获取角速度.</p>
 <p>获取三轴角速度分量</p>
 <dl class="simple">
@@ -250,18 +365,18 @@ b (int): 0 ~ 255; 蓝色分量</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.get_pitch">
-<code class="sig-name descname">get_pitch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_pitch" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.get_pitch">
+<code class="sig-name descname">get_pitch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.get_pitch" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.get_roll">
-<code class="sig-name descname">get_roll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_roll" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.get_roll">
+<code class="sig-name descname">get_roll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.get_roll" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.get_rotation">
-<code class="sig-name descname">get_rotation</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_rotation" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.get_rotation">
+<code class="sig-name descname">get_rotation</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.get_rotation" title="永久链接至目标">¶</a></dt>
 <dd><p>获取旋转的角度.</p>
 <p>获取三轴旋转的角度，逆时针角度为正。该值存在积累误差，请使用“reset_rotation” 函数校准。</p>
 <dl class="simple">
@@ -273,80 +388,80 @@ b (int): 0 ~ 255; 蓝色分量</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.get_shake_strength">
-<code class="sig-name descname">get_shake_strength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_shake_strength" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.get_shake_strength">
+<code class="sig-name descname">get_shake_strength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.get_shake_strength" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.get_yaw">
-<code class="sig-name descname">get_yaw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.get_yaw" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.get_yaw">
+<code class="sig-name descname">get_yaw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.get_yaw" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_arrow_down">
-<code class="sig-name descname">is_arrow_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_arrow_down" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_arrow_down">
+<code class="sig-name descname">is_arrow_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_arrow_down" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_arrow_up">
-<code class="sig-name descname">is_arrow_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_arrow_up" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_arrow_up">
+<code class="sig-name descname">is_arrow_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_arrow_up" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_free_fall">
-<code class="sig-name descname">is_free_fall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_free_fall" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_free_fall">
+<code class="sig-name descname">is_free_fall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_free_fall" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_led_ring_down">
-<code class="sig-name descname">is_led_ring_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_led_ring_down" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_led_ring_down">
+<code class="sig-name descname">is_led_ring_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_led_ring_down" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_led_ring_up">
-<code class="sig-name descname">is_led_ring_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_led_ring_up" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_led_ring_up">
+<code class="sig-name descname">is_led_ring_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_led_ring_up" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_rotate_anticlockwise">
-<code class="sig-name descname">is_rotate_anticlockwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_rotate_anticlockwise" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_rotate_anticlockwise">
+<code class="sig-name descname">is_rotate_anticlockwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_rotate_anticlockwise" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_rotate_clockwise">
-<code class="sig-name descname">is_rotate_clockwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_rotate_clockwise" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_rotate_clockwise">
+<code class="sig-name descname">is_rotate_clockwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_rotate_clockwise" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_shaked">
-<code class="sig-name descname">is_shaked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_shaked" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_shaked">
+<code class="sig-name descname">is_shaked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_shaked" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_shaken">
-<code class="sig-name descname">is_shaken</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_shaken" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_shaken">
+<code class="sig-name descname">is_shaken</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_shaken" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_tilted_left">
-<code class="sig-name descname">is_tilted_left</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_tilted_left" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_tilted_left">
+<code class="sig-name descname">is_tilted_left</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_tilted_left" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.is_tilted_right">
-<code class="sig-name descname">is_tilted_right</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.is_tilted_right" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.is_tilted_right">
+<code class="sig-name descname">is_tilted_right</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.is_tilted_right" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="halocode.motion_sensor.reset_rotation">
-<code class="sig-name descname">reset_rotation</code><span class="sig-paren">(</span><em class="sig-param">axis='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor.reset_rotation" title="永久链接至目标">¶</a></dt>
+<dt id="halocode.motion_sensor_c.reset_rotation">
+<code class="sig-name descname">reset_rotation</code><span class="sig-paren">(</span><em class="sig-param">axis='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.motion_sensor_c.reset_rotation" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="halocode.touchpad0_c">
-<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad0_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad0_c" title="永久链接至目标">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad0_c</code><a class="headerlink" href="#halocode.touchpad0_c" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="halocode.touchpad0_c.get_value">
@@ -406,7 +521,7 @@ b (int): 0 ~ 255; 蓝色分量</p>
 
 <dl class="class">
 <dt id="halocode.touchpad1_c">
-<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad1_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad1_c" title="永久链接至目标">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad1_c</code><a class="headerlink" href="#halocode.touchpad1_c" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="halocode.touchpad1_c.get_value">
@@ -466,7 +581,7 @@ b (int): 0 ~ 255; 蓝色分量</p>
 
 <dl class="class">
 <dt id="halocode.touchpad2_c">
-<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad2_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad2_c" title="永久链接至目标">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad2_c</code><a class="headerlink" href="#halocode.touchpad2_c" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="halocode.touchpad2_c.get_value">
@@ -526,7 +641,7 @@ b (int): 0 ~ 255; 蓝色分量</p>
 
 <dl class="class">
 <dt id="halocode.touchpad3_c">
-<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad3_c</code><span class="sig-paren">(</span><em class="sig-param">touchpad_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#halocode.touchpad3_c" title="永久链接至目标">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">halocode.</code><code class="sig-name descname">touchpad3_c</code><a class="headerlink" href="#halocode.touchpad3_c" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="halocode.touchpad3_c.get_value">
@@ -587,66 +702,43 @@ b (int): 0 ~ 255; 蓝色分量</p>
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">halocode</a></h1>
+          <footer>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, fftust
 
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
-
-<h3>导航</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">快速搜索</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="转向" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2020, fftust.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/halocode.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>
