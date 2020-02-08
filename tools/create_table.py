@@ -6,7 +6,7 @@ import os
 import sys
 import hashlib
 
-API_DIR = "../device/api"
+API_DIR = "../mkPython/device/api"
 
 def get_api_files():
     api_files = []

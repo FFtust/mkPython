@@ -11,7 +11,7 @@ def get_hash(s):
     m.update(s.encode("utf-8"))
     return m.hexdigest()
 
-API_DIR = "../device/api"
+API_DIR = "../mkPython/device/api"
 
 def get_api_files():
     api_files = []

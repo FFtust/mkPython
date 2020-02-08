@@ -156,7 +156,7 @@ class button_c():
         pass
 
     # __fun_type__: read
-    def is_pressed(self, index = 0):
+    def is_pressed(self):
         """按键是否被按下.
 
         检测按键的状态是否被按下. 只有一个按键时，默认不填
@@ -507,3 +507,249 @@ class motion_sensor_c(object):
     # __fun_type__: read
     def get_yaw(self):
         pass  
+
+class speaker_c(object):
+    def __init__(self):
+        pass
+
+    def change_volume(self, value):
+        pass
+
+    def set_volume(self, value):
+        pass
+    # __fun_type__: read
+    def get_volume(self):
+        pass
+
+    def stop_sounds(self):
+        pass
+
+    def play_melody_until_done(self, file_name):
+        pass
+
+
+    def play_melody(self, file_name):
+        pass
+
+    def play_tone(self, frequency, time_s = None):
+        pass
+
+    def play_note(self, note, beat = None):
+        pass
+
+    def rest(self, beat):
+        pass
+
+
+class pin0_c(object):
+    def __init__(self, pin_id = 0):
+        pass
+    # __fun_type__: read
+    def read_digital(self):
+        pass
+
+    def write_digital(self, value):
+        pass
+
+    def servo_write(self, value):
+        pass
+    # __fun_type__: read
+    def read_analog(self):
+        pass
+
+    def write_analog(self, value):
+        pass
+    # __fun_type__: read
+    def is_touched(self):
+        pass
+
+    def set_touchpad_threshold(self, value):
+        pass
+
+    def set_touchpad_sensitivity(self, level):
+        pass
+    # __fun_type__: read
+    def get_touchpad_value(self):
+        pass
+    
+    def set_pwm_frequency(self, frequency):
+        pass
+
+    def set_pwm_duty(self, duty):
+        pass
+
+    def play_note(self, note, beat = None):
+        pass
+
+    def play_tone(self, frequency, time_s = None):
+        pass
+
+class pin1_c(object):
+    def __init__(self, pin_id = 0):
+        pass
+    # __fun_type__: read
+    def read_digital(self):
+        pass
+
+    def write_digital(self, value):
+        pass
+
+    def servo_write(self, value):
+        pass
+    # __fun_type__: read
+    def read_analog(self):
+        pass
+
+    def write_analog(self, value):
+        pass
+    # __fun_type__: read
+    def is_touched(self):
+        pass
+
+    def set_touchpad_threshold(self, value):
+        pass
+
+    def set_touchpad_sensitivity(self, level):
+        pass
+    # __fun_type__: read
+    def get_touchpad_value(self):
+        pass
+    
+    def set_pwm_frequency(self, frequency):
+        pass
+
+    def set_pwm_duty(self, duty):
+        pass
+
+    def play_note(self, note, beat = None):
+        pass
+
+    def play_tone(self, frequency, time_s = None):
+        pass
+
+class pin2_c(object):
+    def __init__(self, pin_id = 0):
+        pass
+    # __fun_type__: read
+    def read_digital(self):
+        pass
+
+    def write_digital(self, value):
+        pass
+
+    def servo_write(self, value):
+        pass
+    # __fun_type__: read
+    def read_analog(self):
+        pass
+
+    def write_analog(self, value):
+        pass
+    # __fun_type__: read
+    def is_touched(self):
+        pass
+
+    def set_touchpad_threshold(self, value):
+        pass
+
+    def set_touchpad_sensitivity(self, level):
+        pass
+    # __fun_type__: read
+    def get_touchpad_value(self):
+        pass
+    
+    def set_pwm_frequency(self, frequency):
+        pass
+
+    def set_pwm_duty(self, duty):
+        pass
+
+    def play_note(self, note, beat = None):
+        pass
+
+    def play_tone(self, frequency, time_s = None):
+        pass
+
+class pin3_c(object):
+    def __init__(self, pin_id = 0):
+        pass
+    # __fun_type__: read
+    def read_digital(self):
+        pass
+
+    def write_digital(self, value):
+        pass
+
+    def servo_write(self, value):
+        pass
+    # __fun_type__: read
+    def read_analog(self):
+        pass
+
+    def write_analog(self, value):
+        pass
+
+    # __fun_type__: read
+    def is_touched(self):
+        pass
+
+    def set_touchpad_threshold(self, value):
+        pass
+
+    def set_touchpad_sensitivity(self, level):
+        pass
+    # __fun_type__: read
+    def get_touchpad_value(self):
+        pass
+    
+    def set_pwm_frequency(self, frequency):
+        pass
+
+    def set_pwm_duty(self, duty):
+        pass
+
+    def play_note(self, note, beat = None):
+        pass
+
+    def play_tone(self, frequency, time_s = None):
+        pass
+
+class mesh_c():
+    def __init__(self):
+        pass
+
+    def start_group(self, group_name):
+        pass
+
+
+    def join_group(self, group_name):
+        pass
+
+    # __fun_type__: read
+    def get_info(self, message):
+        pass
+
+    def broadcast(self, message, value = ""):
+        pass
+
+class wifi_c():
+    def __init__(self):
+        pass
+
+    # __fun_type__: read
+    def is_connected(self):
+        pass
+
+    def connect(self):
+        pass
+
+    def disconnect(self):
+        pass
+
+    # __fun_type__: read
+    def get_mac(self):
+        pass
+
+    # only the two function below face to users
+    def start(self, ssid, password):
+        pass

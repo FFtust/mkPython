@@ -41,6 +41,13 @@ def test():
         j += random.randint(1, 6) / 6.0
         k += random.randint(1, 6) / 6.0
 
-test()
+# test()
+halo.wifi.start("iPhone fftust", "12345678")
+while True:
+    if halo.pin0.is_touched():
+        halo.led.show_all(100, 0, 0)
+        print(halo.wifi.get_mac())
+    else:
+        halo.led.show_all(0, 0, 0)
 
 

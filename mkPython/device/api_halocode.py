@@ -29,8 +29,8 @@ class led_c():
 class button_c():
     def __init__(self):
         request("7052d3b4202ecfa2e398a35fe6bfa83b", ())
-    def is_pressed(self, index = 0):
-        return get_value("071f15bdd29f54daa4d0d6e244b31fe7", ( index ))
+    def is_pressed(self):
+        return get_value("071f15bdd29f54daa4d0d6e244b31fe7", ())
 
 class touchpad0_c(object):
     def __init__(self):
@@ -127,3 +127,171 @@ class motion_sensor_c(object):
         return get_value("9c1816917b4f5c2488fcc98898cf9800", ())
     def get_yaw(self):
         return get_value("02ec9ecd2e720e53f308d71ad809ec04", ())
+
+class speaker_c(object):
+    def __init__(self):
+        request("991d81dd1fa573be7b5a8ef89fb54184", ())
+    def change_volume(self, value):
+        request("4831e56f6ffc3a35d49886f515622672", ( value))
+    def set_volume(self, value):
+        request("f38cbb8d8da8bf5ff93d045faaf78478", ( value))
+    def get_volume(self):
+        return get_value("27f1196853afd41fd7a20c0b38f739b5", ())
+    def stop_sounds(self):
+        request("7e79c2ebbcbbfc1d1cc2661ccdc1a993", ())
+    def play_melody_until_done(self, file_name):
+        request("beac26c872bb855eb07aafaddd37a496", ( file_name))
+    def play_melody(self, file_name):
+        request("67327e689d2fb0644300a14f991f2676", ( file_name))
+    def play_tone(self, frequency, time_s = None):
+        request("7e0558574c28779fcd007636cecc0be4", ( frequency, time_s ))
+    def play_note(self, note, beat = None):
+        request("bd47d1106fd9fc62d1afb7380da748dd", ( note, beat ))
+    def rest(self, beat):
+        request("3d418b161ccb6a5858678f3ed7b2b4d2", ( beat))
+
+class pin0_c(object):
+    def __init__(self, pin_id = 0):
+        request("bff4e6ca46fdfbd26bb865223429d87c", ( pin_id ))
+    def read_digital(self):
+        return get_value("03500ba4f639e7e827034a45296159ba", ())
+    def write_digital(self, value):
+        request("7569b5cc303a9bbaba0e6a06757c676d", ( value))
+    def servo_write(self, value):
+        request("6b2038d5adb67ea72adbde3986c0d47a", ( value))
+    def read_analog(self):
+        return get_value("94baad9388b68b81d89ad54a23ad02b8", ())
+    def write_analog(self, value):
+        request("a7b4e6938b470b0d1a5510bc311e8297", ( value))
+    def is_touched(self):
+        return get_value("a8d5d32f31b9cf001df6721550cae625", ())
+    def set_touchpad_threshold(self, value):
+        request("3df31b68fe679f4188b7fda7ab3e7551", ( value))
+    def set_touchpad_sensitivity(self, level):
+        request("f97f5fcd43569c8e6abef498dfa19c75", ( level))
+    def get_touchpad_value(self):
+        return get_value("58f743e79801661c6e2f99d23ad6bd1b", ())
+    def set_pwm_frequency(self, frequency):
+        request("ba0d00eb3065dfb9df6b9f5ba717f159", ( frequency))
+    def set_pwm_duty(self, duty):
+        request("227e88bbd5d58053a20709348b15a0a1", ( duty))
+    def play_note(self, note, beat = None):
+        request("77fac382ffc895a98fb4533296f60a26", ( note, beat ))
+    def play_tone(self, frequency, time_s = None):
+        request("48f19540b30cd3fcad2bfe768b878f93", ( frequency, time_s ))
+
+class pin1_c(object):
+    def __init__(self, pin_id = 0):
+        request("e4d4f779d65200a29644095a35e104d4", ( pin_id ))
+    def read_digital(self):
+        return get_value("dcbf6cdd1ba2f5c49ff329ddf3e4546e", ())
+    def write_digital(self, value):
+        request("090e3a30d60a4422743c8f30b48ea178", ( value))
+    def servo_write(self, value):
+        request("636704ef720c5296cc063803ab6c59e5", ( value))
+    def read_analog(self):
+        return get_value("faa404b1eca9c1975e2c21068dc42e39", ())
+    def write_analog(self, value):
+        request("f7218f6aeb76795d5e307b88a4b73af8", ( value))
+    def is_touched(self):
+        return get_value("57aaf0cad26a8af38f4c147737aa3911", ())
+    def set_touchpad_threshold(self, value):
+        request("1da6bf8d65ebcb7c5eee7df177e9e7f5", ( value))
+    def set_touchpad_sensitivity(self, level):
+        request("b8df55c84bb5fc9d034154f8c5f1e359", ( level))
+    def get_touchpad_value(self):
+        return get_value("1f4be97c6799440eb51fc32e29333100", ())
+    def set_pwm_frequency(self, frequency):
+        request("5be5480f846cc10365bcfbaa4e26cc27", ( frequency))
+    def set_pwm_duty(self, duty):
+        request("5a2b93139183e960c6a216ad90a2f7e5", ( duty))
+    def play_note(self, note, beat = None):
+        request("c0423c59b53106953c78241ff5665b82", ( note, beat ))
+    def play_tone(self, frequency, time_s = None):
+        request("06b1f7e83132023b11fcf08f915a33d6", ( frequency, time_s ))
+
+class pin2_c(object):
+    def __init__(self, pin_id = 0):
+        request("4341bfae9b26955c77de9caa1071b1ad", ( pin_id ))
+    def read_digital(self):
+        return get_value("c1464cf2a5de65cd1a165f4ba9c68327", ())
+    def write_digital(self, value):
+        request("ae11ac44924739f0be73c03701f5613e", ( value))
+    def servo_write(self, value):
+        request("8c9bac5b255acde719f044f3b049c66c", ( value))
+    def read_analog(self):
+        return get_value("ce2f3b5269773c1a29919309ddb5e624", ())
+    def write_analog(self, value):
+        request("6c6e772d5344fd86ee0d2b16f357e7ba", ( value))
+    def is_touched(self):
+        return get_value("b5fdc846aa59ac94217c9cd04e083eaa", ())
+    def set_touchpad_threshold(self, value):
+        request("387e44f9819ecde6b4c8e5135fe289ca", ( value))
+    def set_touchpad_sensitivity(self, level):
+        request("574ec4561c26abd2e10ca027ceb12bd8", ( level))
+    def get_touchpad_value(self):
+        return get_value("a611346b22ea41fe2f4e72b640c643b0", ())
+    def set_pwm_frequency(self, frequency):
+        request("3bbc08f28f720c45e70df1b7eb1f9072", ( frequency))
+    def set_pwm_duty(self, duty):
+        request("5468285aba2c2e320b4e1f75ae79a197", ( duty))
+    def play_note(self, note, beat = None):
+        request("1b71725b5b69c00df54baa732ebfaef0", ( note, beat ))
+    def play_tone(self, frequency, time_s = None):
+        request("295a25f7e28d3777dcaf903c6bf5ee94", ( frequency, time_s ))
+
+class pin3_c(object):
+    def __init__(self, pin_id = 0):
+        request("8bff510058d3af1989c61874b38cdb1e", ( pin_id ))
+    def read_digital(self):
+        return get_value("4a3dc4bd34df3e469d824d21255dff53", ())
+    def write_digital(self, value):
+        request("9e890a0534779b27a1ab116d25a1b5e2", ( value))
+    def servo_write(self, value):
+        request("6ea9256f1a41a40b394159430052b002", ( value))
+    def read_analog(self):
+        return get_value("ab4b8062acc72052b643bff57a444a40", ())
+    def write_analog(self, value):
+        request("dfc6dd68e621711252c1ddd2495f5bc2", ( value))
+    def is_touched(self):
+        return get_value("81ac296525012099cd7fee4c0c9d276f", ())
+    def set_touchpad_threshold(self, value):
+        request("5fabcefec096ec0cb634bad577e304e6", ( value))
+    def set_touchpad_sensitivity(self, level):
+        request("8184d8638efa1165d5a39d18dde9c807", ( level))
+    def get_touchpad_value(self):
+        return get_value("728a162e4dc07ddf0747eb845f3593a6", ())
+    def set_pwm_frequency(self, frequency):
+        request("16b777d37bdc6efcd5280123eb1155b7", ( frequency))
+    def set_pwm_duty(self, duty):
+        request("45b412013eb8f244dfc2d54840e30c12", ( duty))
+    def play_note(self, note, beat = None):
+        request("b519527590454ff2e38c1311485cf448", ( note, beat ))
+    def play_tone(self, frequency, time_s = None):
+        request("136a9b8d758a0db2fe92ff6230678c3e", ( frequency, time_s ))
+
+class mesh_c():
+    def __init__(self):
+        request("f52b31acb13b78d1c75e1e27e077a647", ())
+    def start_group(self, group_name):
+        request("497314bd4c2c7f492e472e4bd5902049", ( group_name))
+    def join_group(self, group_name):
+        request("f7e2fed3e20a0294ada53d82df0a7f20", ( group_name))
+    def get_info(self, message):
+        return get_value("bbaae12da4085e0c1a466ab11d1f7d58", ( message))
+    def broadcast(self, message, value = ""):
+        request("3d4df0d2cbc0f71a40c2f4322c659ac7", ( message, value ))
+
+class wifi_c():
+    def __init__(self):
+        request("1bbf494a11f0c31c5e5957d8e84dceba", ())
+    def is_connected(self):
+        return get_value("7233c2b0368d9b25d7e7ffcb004737bb", ())
+    def connect(self):
+        request("bd1de88cc76a8dbff3a0adea09a34234", ())
+    def disconnect(self):
+        request("0f1a0e5f2a038f04e246171639dccaef", ())
+    def get_mac(self):
+        return get_value("4610be2ca54f1f013a62c0cc7757ca50", ())
+    def start(self, ssid, password):
+        request("2f132726f0ff47efd96a4a024af361aa", ( ssid, password))
