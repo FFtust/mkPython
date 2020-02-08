@@ -7,9 +7,6 @@
 pip install --user --upgrade setuptools wheel
 pip install --user --upgrade twine
 
-setup.py sdist bdist_wheel
-python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-
-
-python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps mkPython
-python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps mkPython
+python setup.py sdist bdist_wheel
+python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+python -m pip install --index-url https://test.pypi.org/simple/ --no-deps mkPython

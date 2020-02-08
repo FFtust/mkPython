@@ -1,3 +1,13 @@
+import time 
+import os
+
+# append new lib path
+import sys
+import os
+o_path = os.getcwd()
+last_dir = o_path + '//mkPython'
+sys.path.append(last_dir)
+
 from link.find_device import get_port
 
 import adapter.halo

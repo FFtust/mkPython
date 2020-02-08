@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import sys
-import os
-o_path = os.getcwd()
-last_dir = '\\'.join(o_path.split('\\')[:-2])
-sys.path.append(last_dir)
-
-
 import serial
 import time
 import threading

@@ -1,6 +1,6 @@
 import _thread
 
-import device.halo as halo
+import mkPython.halo as halo
 import time,math,random
 
 # a = 0

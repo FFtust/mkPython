@@ -1,13 +1,12 @@
 import setuptools 
-
 setuptools.setup(name='mkPython',
-      version='0.0.10',
+      version='0.0.15',
       description='python lib for makeblock',
       url='https://github.com/FFtust/mkPython',
       author='FFtust',
       author_email='fanfei@makeblock.com',
       license='MIT',
-      packages=['mkPython'],
+      packages=setuptools.find_packages(),
       classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

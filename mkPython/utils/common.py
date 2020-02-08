@@ -2,6 +2,12 @@ import time
 import os
 
 # append new lib path
+# import sys
+# import os
+# o_path = os.getcwd()
+# last_dir = '\\'.join(o_path.split('\\')[:-2])
+# sys.path.append(last_dir)
+
 def add_path(path):
     cur_path = os.getcwd()
     if path[:4] == "last":
