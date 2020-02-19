@@ -1,21 +1,17 @@
 import json
+import time 
 
 from utils.mylog import console
 
 from engine.package import create_package, print_frame
 from engine.base_structure import cell_item
 
-table_tag = \
-{
-    # "T1": {"key":1, "obj":cell_item("T1", "halo.button.is_pressed", (), False)},
-    # "T2": {"key":2, "obj":cell_item("T2", "led.show_all", (0,0,0), None)},
-}
+GET_VALUE_DELAY_TIME = 0.001
+REQUEST_DELAY_TIME = 0.03
 
-table_key = \
-{
-    # 1: {"tag":"T1", "obj":table_tag["T1"]['obj']},
-    # 2: {"tag":"T2", "obj":table_tag["T2"]['obj']}
-}
+def delay_sync(t = 0):
+    if t > 0:
+        time.sleep(t)
 
 class subscribe_item_structure_c():
     def __init__(self, frame = None):
@@ -37,12 +33,50 @@ class subscribe_item_structure_c():
 
 class database_c():
     def __init__(self):
-        self.data_key = table_key
-        self.data_tag = table_tag
+        self.data_key = {}
+        self.data_tag = {}
         self.protocol = None
 
         self.subscribe_item = subscribe_item_structure_c()
-    
+
+############################################################
+    '''
+    subscribe - publish communication 
+    '''
+    def get_value(self, tag, para = None):
+        if not isinstance(para, tuple):
+            para = (para, )
+
+        delay_sync(GET_VALUE_DELAY_TIME)
+        return self.get_value_by_tag(tag, para)
+
+
+    '''
+    Real-time communication
+    '''
+    def request(self, tag, para = None, wait_time = None):
+        if not isinstance(para, tuple):
+            para = (para, )
+
+        if wait_time == None:
+            self.update_para_by_tag(tag, para)
+        else:
+            pass
+
+        delay_sync(REQUEST_DELAY_TIME)
+        
+
+    '''
+    special usage
+    '''
+    def request_with_origin_script(self, script, wait_time = None):
+
+        delay_sync()
+
+
+
+############################################################
+
     def process(self, frame, d_info = None):
         if frame[0] == 0x29:
             self.__process_subscribe(frame[1:])
@@ -88,6 +122,7 @@ class database_c():
 
     def get_value(self, tag, para = None):
         if tag in self.data_tag:
+            print("ddddddd")
             if not self.data_tag[tag]['obj'].subscribed_flag:
                 self.data_tag[tag]['obj'].update_parameters(para)
                 self.data_tag[tag]['obj'].data_new_flag = False
@@ -129,6 +164,3 @@ class database_c():
 
     def update_para_by_key(self, key, para = None):
         pass
-
-
-database = database_c()

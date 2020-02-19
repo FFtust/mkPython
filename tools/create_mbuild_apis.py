@@ -11,7 +11,7 @@ def get_hash(s):
     m.update(s.encode("utf-8"))
     return m.hexdigest()
 
-API_DIR = "../mkPython/device/api"
+API_DIR = "../mkPython/device/api/mbuild"
 
 def get_api_files():
     api_files = []
@@ -43,7 +43,7 @@ def create_from_file(file_name):
                         continue
 
                     func = re.search(r'\s(\w*)\(', line).group(0)[1:-1]
-                    tag = get_hash((class_name+'.'+func))
+                    tag = get_hash(("mbuild."+class_name+'.'+func))
 
                     para_s = re.search(r'\((.*)\):', line).group(0)[:-1]
                     para_s = para_s.split(",")
@@ -65,6 +65,8 @@ def create_from_file(file_name):
     return new_file_content
 
 files = get_api_files()
-for file in files:
-    with open('../api_'+file, 'w', encoding='UTF-8') as f:
-        f.write("import time\r\n" + create_from_file(file)) 
+with open('../../api_mbuild.py', 'w', encoding='UTF-8') as f:
+    f.write("import time\r\n") 
+    for file in files:
+        f.write(create_from_file(file))
+    f.write("\r\n\r\n")

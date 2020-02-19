@@ -1,13 +1,6 @@
 import time 
 import os
 
-# append new lib path
-import sys
-import os
-o_path = os.getcwd()
-last_dir = o_path + '//mkPython'
-sys.path.append(last_dir)
-
 from link.find_device import get_port
 
 import adapter.halo
@@ -23,3 +16,10 @@ touchpad2 = touchpad2_c()
 touchpad3 = touchpad3_c() 
 microphone = microphone_c()
 motion_sensor = motion_sensor_c()
+pin0 = pin0_c() 
+pin1 = pin1_c() 
+pin2 = pin2_c() 
+pin3 = pin3_c() 
+speaker = speaker_c()
+mesh = mesh_c()
+wifi = wifi_c()
