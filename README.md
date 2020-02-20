@@ -12,6 +12,7 @@
 ```
 from mkPython import halo
 import random
+import math
 
 i = 0
 j = 0
