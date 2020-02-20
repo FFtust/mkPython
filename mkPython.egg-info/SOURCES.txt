@@ -9,9 +9,12 @@ mkPython.egg-info/dependency_links.txt
 mkPython.egg-info/top_level.txt
 mkPython/adapter/__init__.py
 mkPython/adapter/halo.py
+mkPython/adapter/mbuild.py
 mkPython/device/__init__.py
 mkPython/device/api_halocode.py
+mkPython/device/api_mbuild.py
 mkPython/device/table_halocode.py
+mkPython/device/table_mbuild.py
 mkPython/engine/__init__.py
 mkPython/engine/base_structure.py
 mkPython/engine/database.py

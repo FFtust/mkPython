@@ -51,6 +51,8 @@ def test():
 #         halo.led.show_all(0, 0, 0)
 
 
+from mkPython.halo import mbuild
+import time
 while True:
-    print(halo.mbuild.dual_rgb_sensor.get_reflected_light("RGB1", 1))
+    print(mbuild.dual_rgb_sensor.get_reflected_light("RGB1"))
     time.sleep(0.2)

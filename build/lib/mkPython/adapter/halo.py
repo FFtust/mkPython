@@ -1,37 +1,48 @@
-import engine.protocol.F3F4
 import engine.database
-
+import engine.protocol
+import engine.protocol.F3F4
 import link.commu_uart
 
 from device.table_halocode import table_halocode_tag
-engine.database.table_tag.update(table_halocode_tag)
 
-table_halocode_key = {}
+class adapter_halo():
+    def __init__(self, port, bauadrate = 115200):
+        self.port = port
+        self.bauadrate = 115200 
 
-key_index = 0
-for item in table_halocode_tag:
-    table_halocode_tag[item]['key'] = key_index 
-    table_halocode_key.update({key_index: {"tag":item, "obj":table_halocode_tag[item]["obj"]}})
-    key_index += 1
+        self.table_tag = table_halocode_tag.copy()
+        self.table_key = self.create_key(self.table_tag)
 
-engine.database.table_key.update(table_halocode_key)
-print(engine.database.table_key[19]["obj"].tag)
-uart = link.commu_uart.uart_link(["COM0", 115200])
+        self.data_base = engine.database.database_c()
+        self.data_base.data_tag.update(self.table_tag)
+        self.data_base.data_key.update(self.table_key)
 
-protocol = engine.protocol.F3F4.F3F4_frame()
-protocol.register_frame_process(engine.database.database)
 
-def set_channel(channel, bauadrate = 115200):
-    global uart, protocol
-    uart.config([channel, str(bauadrate)])
-    uart.open()
-    uart.start_listening()
+    def create_key(self, table_tag):
+        table_key = {}
 
-    uart.rigister_protocol_parse_handle(protocol)
+        key_index = 0
+        for item in table_tag:
+            table_tag[item]['key'] = key_index 
+            table_key.update({key_index: {"tag":item, "obj":table_tag[item]["obj"]}})
+            key_index += 1
 
-    run_into_online_mode()
+        return table_key
 
-def run_into_online_mode():
-    global uart, protocol
-    
-    protocol.send_protocol(bytes([0x0d, 0x00, 0x01]))
+    def start(self):
+        self.link_obj = link.commu_uart.uart_link(["COM0", 115200])
+
+        self.link_obj.config([self.port, str(self.bauadrate)])
+        self.link_obj.open()
+        self.link_obj.start_listening()
+
+        self.protocol_obj = engine.protocol.F3F4.F3F4_frame()
+        self.protocol_obj.register_frame_process(self.data_base)
+
+        self.link_obj.rigister_protocol_parse_handle(self.protocol_obj)
+
+        # send online mode command
+        self.__run_into_online_mode()
+
+    def __run_into_online_mode(self):        
+        self.protocol_obj.send_protocol(bytes([0x0d, 0x00, 0x01]))

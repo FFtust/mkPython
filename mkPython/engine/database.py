@@ -122,7 +122,6 @@ class database_c():
 
     def get_value(self, tag, para = None):
         if tag in self.data_tag:
-            print("ddddddd")
             if not self.data_tag[tag]['obj'].subscribed_flag:
                 self.data_tag[tag]['obj'].update_parameters(para)
                 self.data_tag[tag]['obj'].data_new_flag = False
