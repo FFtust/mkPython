@@ -1,6 +1,6 @@
 import _thread
 
-import mkPython.halo as halo
+# import mkPython.halo as halo
 import time,math,random
 
 # a = 0
@@ -51,8 +51,11 @@ def test():
 #         halo.led.show_all(0, 0, 0)
 
 
-from mkPython.halo import mbuild
-import time
-while True:
-    print(mbuild.dual_rgb_sensor.get_reflected_light("RGB1"))
-    time.sleep(0.2)
+# from mkPython.halo import mbuild
+# import time
+# while True:
+#     print(mbuild.dual_rgb_sensor.get_reflected_light("RGB1"))
+#     time.sleep(0.2)
+
+
+import mkPython.mbuild as mbuild

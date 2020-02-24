@@ -52,7 +52,7 @@ class api_template():
         pass
 
 import device.api_mbuild 
-from adapter.mbuild import bind_to_device
+from adapter.halo_mbuild import bind_to_device
 
 bind_to_device(adapter_default)
 

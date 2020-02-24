@@ -6,6 +6,11 @@
 2. 提供API文档；
 3. 提供根据API问你当自动生成python库功能。
 
+## 安装说明 ##
+python -m pip install --index-url https://test.pypi.org/simple/ --no-deps mkPython
+
+## 架构说明 ## 
+
 ## 使用例程 ##
 ### halo ###
 

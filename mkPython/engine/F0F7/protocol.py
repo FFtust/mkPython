@@ -20,7 +20,7 @@ description:
 F0F7_PROTOCOL_HEAD = 0xF0
 F0F7_PROTOCOL_END = 0xF7
 
-class F3F4_frame():
+class F0F7_frame():
     # about frame limits
     FRAME_MAX_LEN = 1024
     FRAME_MAX_NUM = 32
@@ -38,6 +38,14 @@ class F3F4_frame():
 
 
     def create_frame(self, data):
+        protocol_frame = bytearray(3 + len(data))
+        protocol_frame[0] = F0F7_PROTOCOL_HEAD
+
+        for i in range(len(data)):
+            protocol_frame[i + 1] = data[i]
+
+        protocol_frame[-1] = 0xF7
+        
         return protocol_frame
 
     def print_frame(self, frame):
@@ -84,10 +92,10 @@ class F3F4_frame():
                 self.fsm_state = self.S_HEAD
 
             if (F0F7_PROTOCOL_HEAD == c):
-                self.fsm_state = FSM_S_DATA:
+                self.fsm_state = self.FSM_S_DATA
                 self.recv_buffer = bytearray()
                 self.fsm_state = self.FSM_S_DATA
-            elif (self.fsm_state == FSM_S_DATA) and (F0F7_PROTOCOL_END == c):
+            elif (self.fsm_state == self.FSM_S_DATA) and (F0F7_PROTOCOL_END == c):
                 check_sum = 0 
                 for i in range(len(self.recv_buffer) - 1):
                     check_sum = check_sum + self.recv_buffer[i]
