@@ -1,6 +1,6 @@
-import engine.database
-import engine.protocol
-import engine.protocol.F3F4
+import engine.F3F4.process 
+import engine.F3F4.protocol
+
 import link.commu_uart
 
 from device.table_halocode import table_halocode_tag
@@ -13,9 +13,9 @@ class adapter_halo():
         self.table_tag = table_halocode_tag.copy()
         self.table_key = self.create_key(self.table_tag)
 
-        self.data_base = engine.database.database_c()
-        self.data_base.data_tag.update(self.table_tag)
-        self.data_base.data_key.update(self.table_key)
+        self.process = engine.F3F4.process.F3F4_process_c()
+        self.process.data_tag.update(self.table_tag)
+        self.process.data_key.update(self.table_key)
 
 
     def create_key(self, table_tag):
@@ -36,8 +36,8 @@ class adapter_halo():
         self.link_obj.open()
         self.link_obj.start_listening()
 
-        self.protocol_obj = engine.protocol.F3F4.F3F4_frame()
-        self.protocol_obj.register_frame_process(self.data_base)
+        self.protocol_obj = engine.F3F4.protocol.F3F4_frame()
+        self.protocol_obj.register_frame_process(self.process)
 
         self.link_obj.rigister_protocol_parse_handle(self.protocol_obj)
 

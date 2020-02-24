@@ -52,5 +52,5 @@ files = get_api_files()
 for file in files:
     with open('../table_'+file, 'w', encoding='UTF-8') as f:
 
-        f.write("from engine.base_structure import cell_item\r\n\r\n"+"table_halocode_tag = \\\n{\n"+create_from_file(file) + '}') 
+        f.write("from engine.F3F4.base_structure import cell_item\r\n\r\n"+"table_halocode_tag = \\\n{\n"+create_from_file(file) + '}') 
         create_from_file(file)

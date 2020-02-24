@@ -4,8 +4,6 @@ from struct import pack, unpack
 from utils.common import int_to_byte_2
 from utils.mylog import console
 
-from engine.package import print_frame
-
 
 '''
 F0F7 frame structure
@@ -41,16 +39,20 @@ class F0F7_frame():
         protocol_frame = bytearray(3 + len(data))
         protocol_frame[0] = F0F7_PROTOCOL_HEAD
 
+        check_sum = 0
         for i in range(len(data)):
             protocol_frame[i + 1] = data[i]
+            check_sum += data[i]
 
+        check_sum = check_sum & 0x7f
+        protocol_frame[-2] = check_sum
         protocol_frame[-1] = 0xF7
         
         return protocol_frame
 
     def print_frame(self, frame):
-        __print_frame(frame)
-
+        pass
+        
     def register_frame_process(self, process, conditions = None):
         process.protocol = self
         self.frame_process_list.append(process)
@@ -99,10 +101,11 @@ class F0F7_frame():
                 check_sum = 0 
                 for i in range(len(self.recv_buffer) - 1):
                     check_sum = check_sum + self.recv_buffer[i]
+                check_sum = check_sum & 0x7F
 
                 if check_sum == self.recv_buffer[-1]:
                     receive_frame = self.recv_buffer[:-1]
-                self.fsm_state = FSM_S_HEAD
+                self.fsm_state = self.FSM_S_HEAD
 
             elif (self.FSM_S_DATA == self.fsm_state):
                 self.recv_buffer.append(c)
@@ -111,7 +114,7 @@ class F0F7_frame():
             if receive_frame:
                 console.debug("F0F7 received frame %s" %receive_frame)
                 # frame_list do not contain the protocol structure datas
-                self.frame_list.append(receive_frame[1 : -2])
+                self.frame_list.append(receive_frame)
 
         if len(self.frame_list) > self.FRAME_MAX_NUM:
             console.warning("F0F7 frame list overflow, clear")
@@ -122,7 +125,7 @@ class F0F7_frame():
     def send_protocol(self, package):
         console.debug("send_protocol %s"%package)
         if self.link:
-            # print_frame(self.create_frame(package))
+            print(self.create_frame(package))
             self.link.write(self.create_frame(package))
 
 

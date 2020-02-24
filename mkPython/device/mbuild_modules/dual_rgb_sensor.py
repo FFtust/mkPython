@@ -9,14 +9,14 @@ __TOTAL_CHANNEL_NUM = 0x02
 
 __INQUIRE_REPORT_MODE = 0x00
 __PERIOD_REPORT_MODE = 0x02
-__REPORT_TIME = 15
+__REPORT_TIME = 100
 
 __ON_TRACK = 0X00
 __ON_BACKGROUND = 0X01
 
 #global variable definition
 g_kp = 0
-g_report_time = -1001
+g_report_time = -1.001
 
 # common functions
 def _get_channel(ch):
@@ -92,8 +92,8 @@ list: sensor1­_intensity + sensor2­_intensity + sensor1_state + sensor2_state 
 def get_all_data(index = 1):
     global g_report_time
     
-    if time.ticks_ms() - g_report_time > 1000:
-        g_report_time = time.ticks_ms()
+    if (time.time() - g_report_time) > 1:
+        g_report_time = time.time()
         set_report_mode(__PERIOD_REPORT_MODE, __REPORT_TIME, index)
     value = neurons_async_read("m_dual_rgb_sensor", "get_all_data", (), index)#0.25ms
     

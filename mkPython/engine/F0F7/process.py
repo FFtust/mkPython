@@ -18,9 +18,11 @@ NEURONS_PROTOCOL_END = 0xf7
 class neurons_process_c:
     def __init__(self):
         self.protocol = None
-        # neuron_request_bind_phy(self.protocol.send_protocol)
-        # neurons_heartbeat_start()
     
+    def start_engine(self):
+        neuron_request_bind_phy(self.protocol.send_protocol)
+        neurons_heartbeat_start()
+
     def __get_channel(self, frame):
         return frame[0]
     
@@ -29,9 +31,9 @@ class neurons_process_c:
         return frame[4:]
 
     def process(self, frame, d_info):
-        channel = self.__get_channel(frame)
-        data_region = self.__get_data_region(frame)
-        if (not channel) or (not data_region):
-            pass
-        else:
-            response_distributor(data_region)
+        # channel = self.__get_channel(frame)
+        # data_region = self.__get_data_region(frame)
+        # if (not channel) or (not data_region):
+        #     pass
+        # else:
+        response_distributor(frame)

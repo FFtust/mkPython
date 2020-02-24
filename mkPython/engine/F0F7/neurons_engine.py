@@ -4,11 +4,12 @@ import re
 import _thread
 
 from engine.F0F7.neurons_data_conversion import *
+from engine.F0F7.neurons_libs import *
 
 # neurons config 
-HEART_PACKAGE_USE_INDIVIDUAL_THREAD = False
+HEART_PACKAGE_USE_INDIVIDUAL_THREAD = True
 POLLING_TIME_FOR_ASSIGNMENT_ID = 0.5 # unit: second
-HEART_PACKAGE_THREAD_STACK_SIZE = 5 * 1024
+HEART_PACKAGE_THREAD_STACK_SIZE = 8 * 1024
 HEART_PACKAGE_THREAD_PRIORITY  = 1
 BLOCKING_READ_MAT_TIME_MS = 200
 
@@ -394,7 +395,7 @@ def neurons_async_read(block_name, subcommand, data_segment = [], block_index = 
         else:
             if request_first:
                 # if not, send the request command firstly
-                last_ticks = time.ticks_ms()
+                last_ticks = time.time() * 1000
                 block_id = neurons_request(block_name, subcommand, data_segment, block_index)
                 if block_id == None:
                     result = get_default_result(block_name,subcommand)
@@ -403,7 +404,7 @@ def neurons_async_read(block_name, subcommand, data_segment = [], block_index = 
                     if result_id in online_neurons_module_temporary_result_dict:
                         result = online_neurons_module_temporary_result_dict[result_id]["result"]
                         return result
-                    elif time.ticks_ms() - last_ticks > BLOCKING_READ_MAT_TIME_MS:
+                    elif time.time() * 1000 - last_ticks > BLOCKING_READ_MAT_TIME_MS:
                         result = get_default_result(block_name,subcommand)
                         return result
             else:
@@ -462,13 +463,13 @@ def neurons_heartbeat_thread():
     global default_link
     global neurons_heartbeat_enable_flag
 
-    neurons_request("assign_id", None, 0xff, (0x00))
+    # neurons_request("assign_id", None, 0xff, (0x00))
     count = 0
     while True:
         if neurons_heartbeat_enable_flag:
             activation_block_update()
             
-            neurons_request("assign_id", None, 0xff, (0x00))
+            # neurons_request("assign_id", None, 0xff, (0x00))
         # sleep_special use vTaskDelay() instead of mp_hal_delay_ms() 
         # sleep_special(POLLING_TIME_FOR_ASSIGNMENT_ID)
         if count < 20:
@@ -507,8 +508,8 @@ def neurons_heartbeat_start():
             print("read csv file error")
 
     if HEART_PACKAGE_USE_INDIVIDUAL_THREAD:
-        _thread.stack_size(HEART_PACKAGE_THREAD_STACK_SIZE)
-        _thread.start_new_thread(neurons_heartbeat_thread, (), HEART_PACKAGE_THREAD_PRIORITY, 2)
+        # _thread.stack_size(HEART_PACKAGE_THREAD_STACK_SIZE)
+        _thread.start_new_thread(neurons_heartbeat_thread, ())
     else:
         from system.sys_loop import sys_loop_add_operation
         sys_loop_add_operation(neurons_heartbeat_func, ())

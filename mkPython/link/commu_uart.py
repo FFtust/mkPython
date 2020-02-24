@@ -9,7 +9,7 @@ from utils.mylog import console
 from link.base import base_link
 
 BAUDRATE_DEFAULT = 115200
-SERIAL_TIMEOUT_DEFAULT = 0.1
+SERIAL_TIMEOUT_DEFAULT = 0.3
 
 class uart_link(base_link):
     def __init__(self, para):

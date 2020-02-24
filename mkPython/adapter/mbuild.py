@@ -1,3 +1,5 @@
+import time
+
 import engine.F0F7
 import engine.F0F7.protocol
 import engine.F0F7.process
@@ -28,3 +30,11 @@ class adapter_mbuild():
         self.protocol_obj.register_frame_process(self.process)
 
         self.link_obj.rigister_protocol_parse_handle(self.protocol_obj)
+
+        self.process.start_engine()
+        
+        self.link_obj.write(bytes("import halo, communication\r\n", "utf8"))
+        time.sleep(1)
+        self.link_obj.write(bytes("halo.led.show_all(10, 0, 0)\r\n", "utf8"))
+        time.sleep(1)
+        self.link_obj.write(bytes("communication.bind_passthrough_channels(\"uart0\", \"uart1\")\r\n","utf8"))

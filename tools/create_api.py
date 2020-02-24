@@ -57,9 +57,9 @@ def create_from_file(file_name):
                     last = re.search(r"__fun_type__:(.*)read", last_line)
                     if last:
                         # print("%s%s%s"%(line, "        ", "get_vlue(\"a1\")"))
-                        new_file_content += ("%s%sreturn self.adapter.data_base.get_value(\"%s\", %s)\r\n"%(line, "        ", tag, para))
+                        new_file_content += ("%s%sreturn self.adapter.process.get_value(\"%s\", %s)\r\n"%(line, "        ", tag, para))
                     else:
-                        new_file_content += ("%s%sself.adapter.data_base.request(\"%s\", %s)\r\n"%(line, "        ", tag, para))
+                        new_file_content += ("%s%sself.adapter.process.request(\"%s\", %s)\r\n"%(line, "        ", tag, para))
 
             last_line = line
     return new_file_content

@@ -1,17 +1,17 @@
 from struct import pack, unpack
 import time
 import re
-import uos
+import os
 
 # cofig if use existed dictionaries
 USE_DICT_CREATED_PRIVIOUSLY = True
 
 if USE_DICT_CREATED_PRIVIOUSLY:
-    from neurons_protocol.neurons_dicts import general_command_request_dict
-    from neurons_protocol.neurons_dicts import general_command_response_dict
-    from neurons_protocol.neurons_dicts import common_neurons_command_request_dict
-    from neurons_protocol.neurons_dicts import common_neurons_command_response_dict
-    from neurons_protocol.neurons_dicts import common_neurons_command_default_result_dict
+    from engine.F0F7.neurons_dicts import general_command_request_dict
+    from engine.F0F7.neurons_dicts import general_command_response_dict
+    from engine.F0F7.neurons_dicts import common_neurons_command_request_dict
+    from engine.F0F7.neurons_dicts import common_neurons_command_response_dict
+    from engine.F0F7.neurons_dicts import common_neurons_command_default_result_dict
 else:
     general_command_request_dict = dict() 
     general_command_response_dict = dict()
