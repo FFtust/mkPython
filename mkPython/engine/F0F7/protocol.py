@@ -125,7 +125,6 @@ class F0F7_frame():
     def send_protocol(self, package):
         console.debug("send_protocol %s"%package)
         if self.link:
-            print(self.create_frame(package))
             self.link.write(self.create_frame(package))
 
 

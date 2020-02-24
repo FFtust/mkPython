@@ -51,16 +51,16 @@ def test():
 #         halo.led.show_all(0, 0, 0)
 
 
-# from mkPython.halo import mbuild
+# from mkPython.hal o import mbuild
 # import time
 # while True:
 #     print(mbuild.dual_rgb_sensor.get_reflected_light("RGB1"))
 #     time.sleep(0.2)
 
-# import mkPython.halo as halo
-
-import mkPython.mbuild as mbuild
-import engine.F0F7
+import mkPython.halo as halo
+test()
+# import mkPython.mbuild as mbuild
+# import engine.F0F7
 
 # while True:
 #     print(engine.F0F7.neurons_engine.neurons_get_online_list())

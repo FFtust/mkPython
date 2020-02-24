@@ -57,7 +57,7 @@ class uart_link(base_link):
         if not self.ser.is_open:
             return
 
-        console.warning("phy write frame is: %s" %frame)
+        console.debug("phy write frame is: %s" %frame)
         self.ser.write(frame)
 
     def read(self, bytes_num = 1):

@@ -1,3 +1,5 @@
+import time
+
 import engine.F3F4.process 
 import engine.F3F4.protocol
 
@@ -39,10 +41,18 @@ class adapter_halo():
         self.protocol_obj = engine.F3F4.protocol.F3F4_frame()
         self.protocol_obj.register_frame_process(self.process)
 
+        self.sys_process = engine.F3F4.process.system_cmd_process_c()
+        self.protocol_obj.register_frame_process(self.sys_process)
+
+
         self.link_obj.rigister_protocol_parse_handle(self.protocol_obj)
 
         # send online mode command
         self.__run_into_online_mode()
 
-    def __run_into_online_mode(self):        
+    def __run_into_online_mode(self):  
+        while True:
+            if self.sys_process.get_sys_status() != None:
+                break
+        time.sleep(0.2)
         self.protocol_obj.send_protocol(bytes([0x0d, 0x00, 0x01]))

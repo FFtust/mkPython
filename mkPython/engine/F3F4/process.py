@@ -163,3 +163,24 @@ class F3F4_process_c():
 
     def update_para_by_key(self, key, para = None):
         pass
+
+
+
+class system_cmd_process_c():
+    def __init__(self):
+        self.protocol = None
+
+        self.sys_status = None
+        self.sys_mode = None
+
+    def process(self, frame, d_info = None):
+        if frame[0] == 0x0d:
+            self.sys_status = frame[2]
+            print(self.sys_status)
+
+    def get_sys_status(self):
+        if self.protocol:
+            self.protocol.send_protocol(bytes([0x0d, 0x80]))
+        time.sleep(0.2)
+        return self.sys_status
+
