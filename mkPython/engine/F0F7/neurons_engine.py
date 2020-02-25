@@ -463,13 +463,13 @@ def neurons_heartbeat_thread():
     global default_link
     global neurons_heartbeat_enable_flag
 
-    # neurons_request("assign_id", None, 0xff, (0x00))
+    neurons_request("assign_id", None, 0xff, (0x00))
     count = 0
     while True:
         if neurons_heartbeat_enable_flag:
             activation_block_update()
             
-            # neurons_request("assign_id", None, 0xff, (0x00))
+            neurons_request("assign_id", None, 0xff, (0x00))
         # sleep_special use vTaskDelay() instead of mp_hal_delay_ms() 
         # sleep_special(POLLING_TIME_FOR_ASSIGNMENT_ID)
         if count < 20:

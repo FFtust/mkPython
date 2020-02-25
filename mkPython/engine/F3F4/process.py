@@ -184,3 +184,8 @@ class system_cmd_process_c():
         time.sleep(0.2)
         return self.sys_status
 
+
+    def send_sys_cmd(self, script):
+        if self.protocol:
+            print(create_package(script, 0x00, 0x03))   
+            self.protocol.send_protocol(create_package(script, 0x00, 0x03))

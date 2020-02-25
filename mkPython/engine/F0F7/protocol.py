@@ -91,7 +91,7 @@ class F0F7_frame():
             receive_frame = None
 
             if len(self.recv_buffer) > self.FRAME_MAX_LEN:
-                self.fsm_state = self.S_HEAD
+                self.fsm_state = self.FSM_S_HEAD
 
             if (F0F7_PROTOCOL_HEAD == c):
                 self.fsm_state = self.FSM_S_DATA

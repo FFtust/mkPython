@@ -4,6 +4,7 @@ import engine.F3F4.process
 import engine.F3F4.protocol
 
 import link.commu_uart
+import link.p_link
 
 from device.table_halocode import table_halocode_tag
 
@@ -30,13 +31,20 @@ class adapter_halo():
             key_index += 1
 
         return table_key
-
+ 
     def start(self):
-        self.link_obj = link.commu_uart.uart_link(["COM0", 115200])
+        port_device = link.p_link.get_available_port()[0]
+        if not port_device.is_open():
+            self.link_obj = link.commu_uart.uart_link(["COM0", 115200])
 
-        self.link_obj.config([self.port, str(self.bauadrate)])
-        self.link_obj.open()
-        self.link_obj.start_listening()
+            self.link_obj.config([self.port, str(self.bauadrate)])
+            self.link_obj.open()
+            self.link_obj.start_listening()
+
+            port_device.status = 1
+            port_device.link_obj = self.link_obj
+        else:
+            self.link_obj = port_device.link_obj
 
         self.protocol_obj = engine.F3F4.protocol.F3F4_frame()
         self.protocol_obj.register_frame_process(self.process)

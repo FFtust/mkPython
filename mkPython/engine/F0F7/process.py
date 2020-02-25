@@ -19,21 +19,10 @@ class neurons_process_c:
     def __init__(self):
         self.protocol = None
     
-    def start_engine(self):
+    def start_engine(self, start_heart = True):
         neuron_request_bind_phy(self.protocol.send_protocol)
-        neurons_heartbeat_start()
-
-    def __get_channel(self, frame):
-        return frame[0]
-    
-    def __get_data_region(self, frame):
-        # the first 4 bytes are reserved
-        return frame[4:]
+        if start_heart:
+            neurons_heartbeat_start()
 
     def process(self, frame, d_info):
-        # channel = self.__get_channel(frame)
-        # data_region = self.__get_data_region(frame)
-        # if (not channel) or (not data_region):
-        #     pass
-        # else:
         response_distributor(frame)

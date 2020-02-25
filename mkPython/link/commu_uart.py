@@ -16,6 +16,8 @@ class uart_link(base_link):
         self.protocol_list = []
         self.config(para)
         super().__init__()
+
+        self.write_lock = threading.Lock()
     
     '''
     para:[port, baudrate, timeout]
@@ -57,8 +59,11 @@ class uart_link(base_link):
         if not self.ser.is_open:
             return
 
-        console.debug("phy write frame is: %s" %frame)
+        print("phy write frame is: %s" %frame)
+
+        self.write_lock.acquire()
         self.ser.write(frame)
+        self.write_lock.release()
 
     def read(self, bytes_num = 1):
         data = bytearray()
