@@ -9,13 +9,15 @@ from utils.mylog import console
 from link.base import base_link
 
 BAUDRATE_DEFAULT = 115200
-SERIAL_TIMEOUT_DEFAULT = 0.1
+SERIAL_TIMEOUT_DEFAULT = 0.3
 
 class uart_link(base_link):
     def __init__(self, para):
         self.protocol_list = []
         self.config(para)
         super().__init__()
+
+        self.write_lock = threading.Lock()
     
     '''
     para:[port, baudrate, timeout]
@@ -57,8 +59,11 @@ class uart_link(base_link):
         if not self.ser.is_open:
             return
 
-        console.warning("phy write frame is: %s" %frame)
+        console.debug("phy write frame is: %s" %frame)
+
+        self.write_lock.acquire()
         self.ser.write(frame)
+        self.write_lock.release()
 
     def read(self, bytes_num = 1):
         data = bytearray()

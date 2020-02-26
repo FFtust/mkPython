@@ -1,6 +1,18 @@
 import time 
 import os
 
+
+def run_safe(func):
+    def _wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except KeyboardInterrupt:
+            raise KeyboardInterrupt
+        except Exception as e:
+            print('run safe: ' + str(e))
+            return ''
+    return _wrapper
+    
 # append new lib path
 # import sys
 # import os
@@ -53,6 +65,9 @@ def num_range_check(num, min_n = None, max_n = None, to_range = True):
         if to_range and num > max_n:
             num = max_n
     return num
+
+# old definition
+num_range_scale = num_range_check
 
 # bytes switch
 def float_to_byte_4(data): 

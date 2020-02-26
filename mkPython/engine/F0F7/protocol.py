@@ -14,6 +14,20 @@ head|ID  |type|sub |cmd |da_1| ...|da_n|sum |end |
 ----*----*----*----*----*----*----*----*----*----*
 description:
 '''
+def create_frame(data):
+    protocol_frame = bytearray(3 + len(data))
+    protocol_frame[0] = F0F7_PROTOCOL_HEAD
+
+    check_sum = 0
+    for i in range(len(data)):
+        protocol_frame[i + 1] = data[i]
+        check_sum += data[i]
+
+    check_sum = check_sum & 0x7f
+    protocol_frame[-2] = check_sum
+    protocol_frame[-1] = 0xF7
+    
+    return protocol_frame
 
 F0F7_PROTOCOL_HEAD = 0xF0
 F0F7_PROTOCOL_END = 0xF7
@@ -33,22 +47,6 @@ class F0F7_frame():
         self.link = None
         self.frame_process_list = []
         self.__fsm_init()
-
-
-    def create_frame(self, data):
-        protocol_frame = bytearray(3 + len(data))
-        protocol_frame[0] = F0F7_PROTOCOL_HEAD
-
-        check_sum = 0
-        for i in range(len(data)):
-            protocol_frame[i + 1] = data[i]
-            check_sum += data[i]
-
-        check_sum = check_sum & 0x7f
-        protocol_frame[-2] = check_sum
-        protocol_frame[-1] = 0xF7
-        
-        return protocol_frame
 
     def print_frame(self, frame):
         pass
@@ -125,7 +123,7 @@ class F0F7_frame():
     def send_protocol(self, package):
         console.debug("send_protocol %s"%package)
         if self.link:
-            self.link.write(self.create_frame(package))
+            self.link.write(create_frame(package))
 
 
 

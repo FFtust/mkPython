@@ -59,7 +59,7 @@ class uart_link(base_link):
         if not self.ser.is_open:
             return
 
-        print("phy write frame is: %s" %frame)
+        console.debug("phy write frame is: %s" %frame)
 
         self.write_lock.acquire()
         self.ser.write(frame)

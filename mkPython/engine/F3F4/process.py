@@ -176,7 +176,6 @@ class system_cmd_process_c():
     def process(self, frame, d_info = None):
         if frame[0] == 0x0d:
             self.sys_status = frame[2]
-            print(self.sys_status)
 
     def get_sys_status(self):
         if self.protocol:

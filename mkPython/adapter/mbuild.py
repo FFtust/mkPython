@@ -49,14 +49,11 @@ class adapter_mbuild():
         engine.F0F7.neurons_engine.neuron_request_bind_phy(self.protocol_obj.send_protocol)
         self.process.start_engine(start_heart_package)
         
-        print(create_frame(create_package("import communication", 0x00, 0x04)))
+
+        # if mbuild modules are connected to halo, then set halo passthrough mode
+        # even halo not available, send these commands either
         self.link_obj.write(create_frame(create_package("import communication", 0x00, 0x04)))
-        time.sleep(0.9)
+        time.sleep(0.1)
         self.link_obj.write(create_frame(create_package("halo.led.show_all(10,10,0)", 0x00, 0x04)))
         time.sleep(0.1)
         self.link_obj.write(create_frame(create_package("communication.bind_passthrough_channels(\"uart0\", \"uart1\")", 0x00, 0x04)))
-
-        # time.sleep(1)
-        # self.link_obj.write(bytes("halo.led.show_all(10, 0, 0)\r\n", "utf8"))
-        # time.sleep(1)
-        # self.link_obj.write(bytes("communication.bind_passthrough_channels(\"uart0\", \"uart1\")\r\n","utf8"))
