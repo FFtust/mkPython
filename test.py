@@ -81,28 +81,40 @@ print(m.hexdigest())
 #!/usr/bin/env python
 # !-*- coding:utf-8 -*-
 
-class Menu:
+# class Menu:
 
-    def __init__(self):
-        pass
+#     def __init__(self):
+#         pass
 
-    def updateProject(self):
-        pass
+#     def updateProject(self):
+#         pass
 
-    def restartProject(self):
-        pass
+#     def restartProject(self):
+#         pass
 
-    def restartTomcat(self):
-        pass
+#     def restartTomcat(self):
+#         pass
 
-    def stopTomcat(self):
-        pass
+#     def stopTomcat(self):
+#         pass
 
-    def startTomcat(self):
-        pass
+#     def startTomcat(self):
+#         pass
 
-    def methods(self):
-        return(list(filter(lambda m: not m.startswith("__") and not m.endswith("__") and callable(getattr(self, m)), dir(self))))
+#     def methods(self):
+#         return(list(filter(lambda m: not m.startswith("__") and not m.endswith("__") and callable(getattr(self, m)), dir(self))))
 
-if __name__ == '__main__':
-    print(Menu().methods())
+# if __name__ == '__main__':
+#     print(Menu().methods())
+
+
+ 
+import socket               # 导入 socket 模块
+ 
+s = socket.socket()         # 创建 socket 对象
+host = socket.gethostname() # 获取本地主机名
+port = 12345                # 设置端口号
+ 
+s.connect((host, port))
+print(s.recv(1024))
+s.close()
