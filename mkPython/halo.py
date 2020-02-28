@@ -27,6 +27,7 @@ pin3 = pin3_c(adapter_default)
 speaker = speaker_c(adapter_default)
 mesh = mesh_c(adapter_default)
 wifi = wifi_c(adapter_default)
+gamepad = gamepad_c(adapter_default)
 
 class api_template():
     def __init__(self):

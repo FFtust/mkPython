@@ -38,6 +38,7 @@ def create_new(device_name, port, boardrate = 115200):
         halo.speaker = speaker_c(adapter)
         halo.mesh = mesh_c(adapter)
         halo.wifi = wifi_c(adapter)
+        halo.gamepad = gamepad_c(adapter)
 
         bind_to_device(adapter)
         mbuild = api_template()

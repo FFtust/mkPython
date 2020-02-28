@@ -753,3 +753,50 @@ class wifi_c():
     # only the two function below face to users
     def start(self, ssid, password):
         pass
+
+class gamepad_c():
+    def __init__(self):
+        pass
+
+    # __fun_type__: read
+    def is_key_pressed(button):
+        """获取蓝牙手柄按键状态.
+
+        获取各个按键状态。
+
+        Args:
+            button (str): "R1"、 "R2"、 "L1"、, "L2"、
+                        "N1"、 "N2"、 "N3"、 "N4"、
+                        "Up"、 "Down"、 "Left"、 "Right"、
+                        "Start"、"Select"、
+                        "L_Thumb"、 "R_Thumb"
+        Returns:
+            bool : 
+        """
+        pass
+
+    # __fun_type__: read
+    def get_joystick(joystick_pos):
+        """获取遥杆值分量.
+
+        获取三轴角速度分量
+
+        Args:
+            axis (str): Lx"、"Ly"、"Rx"、"Ry
+        Returns:
+            int : -·00 ~ 100
+        """
+        pass
+
+    # __fun_type__: read
+    def get_all():
+        """获取所有按键及要感值.
+
+        获取遥控器所有值.顺序为
+
+        Args:
+            无
+        Returns:
+            list : 
+        """
+        return get_joystick.get_all_data()

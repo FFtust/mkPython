@@ -2,6 +2,8 @@ import time
 
 import engine.F3F4.process 
 import engine.F3F4.protocol
+from engine.F3F4.package import create_package, print_frame
+from engine.F3F4.protocol import create_frame
 
 import link.commu_uart
 import link.p_link
@@ -64,3 +66,6 @@ class adapter_halo():
                 break
         time.sleep(0.2)
         self.protocol_obj.send_protocol(bytes([0x0d, 0x00, 0x01]))
+
+        self.link_obj.write(create_frame(create_package("subscribe.restart()", 0x00, 0x04)))
+

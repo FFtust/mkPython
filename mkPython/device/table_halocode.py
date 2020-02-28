@@ -1,7 +1,5 @@
-from engine.F3F4.base_structure import cell_item
-
-
-
+from engine.F3F4.base_structure import cell_item
+
 table_halocode_tag = \
 {
 "f4f2cdc3a4ed04256d2e0b12cec89fc7": {"key":None, "obj":cell_item("f4f2cdc3a4ed04256d2e0b12cec89fc7", "led.__init__", (), False)},
@@ -136,4 +134,8 @@ table_halocode_tag = \
 "0f1a0e5f2a038f04e246171639dccaef": {"key":None, "obj":cell_item("0f1a0e5f2a038f04e246171639dccaef", "wifi.disconnect", (), False)},
 "4610be2ca54f1f013a62c0cc7757ca50": {"key":None, "obj":cell_item("4610be2ca54f1f013a62c0cc7757ca50", "wifi.get_mac", (), False)},
 "2f132726f0ff47efd96a4a024af361aa": {"key":None, "obj":cell_item("2f132726f0ff47efd96a4a024af361aa", "wifi.start", (), False)},
+"27e8cec63fc9d76b6bb445f589462d63": {"key":None, "obj":cell_item("27e8cec63fc9d76b6bb445f589462d63", "gamepad.__init__", (), False)},
+"be164aab76187dac8929539641ffd163": {"key":None, "obj":cell_item("be164aab76187dac8929539641ffd163", "gamepad.is_key_pressed", (), False)},
+"b3da5fe046d5548d0d6d4353db512086": {"key":None, "obj":cell_item("b3da5fe046d5548d0d6d4353db512086", "gamepad.get_joystick", (), False)},
+"0d9e44971cb6c3435bf9be6823bab93c": {"key":None, "obj":cell_item("0d9e44971cb6c3435bf9be6823bab93c", "gamepad.get_all", (), False)},
 }
