@@ -4,7 +4,7 @@ from struct import pack, unpack
 from utils.common import int_to_byte_2
 from utils.mylog import console
 
-from engine.package import print_frame
+from engine.F3F4.package import print_frame
 
 
 '''
@@ -26,6 +26,31 @@ sum : the sum of data region, sum = (da_1 + *** + da_n) & 0xf7
 F3F4_PROTOCOL_HEAD = 0xF3
 COMMON_PROTOCOL_END = 0xF4
 
+def create_frame(data):
+    protocol_frame = bytearray()
+    protocol_frame.append(F3F4_PROTOCOL_HEAD)
+
+    datalen = len(data) 
+
+    data_len_byte = datalen.to_bytes(2, "little")
+
+    head_check = (data_len_byte[0] + data_len_byte[1] + F3F4_PROTOCOL_HEAD) & 0xFF
+
+    # add head check
+    protocol_frame.append(head_check)
+    protocol_frame += data_len_byte
+
+    data_sum = 0  
+    for i in range(len(data)):
+        protocol_frame.append(data[i])
+        data_sum += data[i]
+
+    data_sum = data_sum & 0xFF
+    protocol_frame.append(data_sum)   
+    protocol_frame.append(COMMON_PROTOCOL_END)  
+    
+    return protocol_frame
+
 class F3F4_frame():
     # about frame limits
     FRAME_MAX_LEN = 1024
@@ -44,32 +69,6 @@ class F3F4_frame():
         self.link = None
         self.frame_process_list = []
         self.__fsm_init()
-
-
-    def create_frame(self, data):
-        protocol_frame = bytearray()
-        protocol_frame.append(F3F4_PROTOCOL_HEAD)
-    
-        datalen = len(data) 
-
-        data_len_byte = datalen.to_bytes(2, "little")
-
-        head_check = (data_len_byte[0] + data_len_byte[1] + F3F4_PROTOCOL_HEAD) & 0xFF
-
-        # add head check
-        protocol_frame.append(head_check)
-        protocol_frame += data_len_byte
-
-        data_sum = 0  
-        for i in range(len(data)):
-            protocol_frame.append(data[i])
-            data_sum += data[i]
-
-        data_sum = data_sum & 0xFF
-        protocol_frame.append(data_sum)   
-        protocol_frame.append(COMMON_PROTOCOL_END)  
-        
-        return protocol_frame
 
     def print_frame(self, frame):
         __print_frame(frame)
@@ -181,5 +180,5 @@ class F3F4_frame():
     def send_protocol(self, package):
         console.debug("send_protocol %s"%package)
         if self.link:
-            # print_frame(self.create_frame(package))
-            self.link.write(self.create_frame(package))
+            # print(create_frame(package))
+            self.link.write(create_frame(package))

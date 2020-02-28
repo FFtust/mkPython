@@ -779,7 +779,7 @@ class gamepad_c():
     def get_joystick(joystick_pos):
         """获取遥杆值分量.
 
-        获取三轴角速度分量
+        获取两个遥杆的值。
 
         Args:
             axis (str): Lx"、"Ly"、"Rx"、"Ry

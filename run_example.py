@@ -1,6 +1,7 @@
 import sys, pygame
 from mkPython import halo
 
+halo.led.show_all(100, 0, 0)
 pygame.init()
 
 size = width, height = 420, 440
