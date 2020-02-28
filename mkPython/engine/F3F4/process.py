@@ -91,8 +91,14 @@ class F3F4_process_c():
         self.subscribe_item.set_frame(frame)
         obj = self.subscribe_item.get_json_obj()
         for item in obj:
-            if item in self.data_key:
-                self.data_key[item]['obj'].update_value(obj[item])
+
+            if '_' in item:
+                obj_key = item.split('_')[0]
+            else:
+                obj_key = item
+
+            if obj_key in self.data_key:
+                self.data_key[obj_key]['obj'].update_value(obj[item], item)
 
         
     def __process_realtime(self, frame):
@@ -107,11 +113,11 @@ class F3F4_process_c():
         para = str(cell_item['obj'].paras)
         return create_package(func_script + para)
 
-    def create_subcribe_frame(self, cell_item):
-        key = cell_item['key']
+    def create_subcribe_frame(self, cell_item, para):
+        key = cell_item['obj'].get_key_by_para(para)
         func_script = cell_item['obj'].func
-        para = str(cell_item['obj'].paras)
-        return create_package("subscribe.add_item(%s, %s, %s)" %(key, func_script, para))
+        # para = str(cell_item['obj'].paras)
+        return create_package("subscribe.add_item('%s', %s, %s)" %(key, func_script, para))
 
 ############################################################
     def data_lib_append(self, lib_dict):
@@ -121,17 +127,22 @@ class F3F4_process_c():
         pass
 
     def get_value(self, tag, para = None):
+        para = tuple(para)
         if tag in self.data_tag:
-            if not self.data_tag[tag]['obj'].subscribed_flag:
-                self.data_tag[tag]['obj'].update_parameters(para)
-                self.data_tag[tag]['obj'].data_new_flag = False
-                print(self.create_subcribe_frame(self.data_tag[tag]))
-                self.protocol.send_protocol(self.create_subcribe_frame(self.data_tag[tag]))
-                self.data_tag[tag]['obj'].wait_data_new()
+            if not self.data_tag[tag]['obj'].get_subscribe_flag(para):
+                self.data_tag[tag]['obj'].set_data_new_flag(False, para)
                 
-                self.data_tag[tag]['obj'].subscribed_flag = True
+                print(self.create_subcribe_frame(self.data_tag[tag], para))
 
-            return self.data_tag[tag]['obj'].get_value()
+                self.protocol.send_protocol(self.create_subcribe_frame(self.data_tag[tag], para))
+                
+                if self.data_tag[tag]['obj'].wait_data_new(para):
+                    self.data_tag[tag]['obj'].set_subscribe_flag(True, para)
+                    return self.data_tag[tag]['obj'].get_value(para)
+                else:
+                    return self.data_tag[tag]['obj'].get_default_value(para)
+
+            return self.data_tag[tag]['obj'].get_value(para)
         else:
             return None
 

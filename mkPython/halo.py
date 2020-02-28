@@ -6,6 +6,8 @@ from adapter.halo import adapter_halo
 
 from device.api_halocode import *
 
+def exit():
+	adapter_default.link_obj.close()
 # create default adapter, bind to default device
 adapter_default = adapter_halo(get_port())
 adapter_default.start()
