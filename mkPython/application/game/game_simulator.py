@@ -4,16 +4,16 @@ import random
 import time
 import threading
 
-WIDTH = 800
-HEIGHT = 400
+WIDTH = 256
+HEIGHT = 512
 TITLE = "16 * 8 点阵游戏模拟机"
 
-ROW = 8
-CLO = 16
+ROW = 16
+CLO = 8
 
 BACK_COLOR = (10, 20, 30)
 POINT_COLOR = (0, 0, 200)
-print(33333333)
+
 def config(width, height, row = 8, clo = 16, b_clolor = (1, 2, 3), itle = ""):
     global WIDTH, HEIGHT, TITLE, ROW, CLO
     WIDTH = width
@@ -60,10 +60,10 @@ def update_screen(data):
 
     draw_background()
 
-    for i in range(CLO):
-        for j in range(ROW):
+    for i in range(ROW):
+        for j in range(CLO):
             if (data[i] & (0x01 << j)):
-                rect(Point(j, i), POINT_COLOR)
+                rect(Point(i, j), POINT_COLOR)
     pygame.display.flip()
     if pygame_events == []:
         pygame_events = pygame.event.get()
@@ -71,7 +71,6 @@ def update_screen(data):
 pygame_events = []
 def get_events():
     global pygame_events
-    # print(pygame_events)
     ret = pygame_events
     pygame_events = []
     return ret
@@ -85,8 +84,12 @@ def initialize():
     pygame.init()
 
     window = pygame.display.set_mode((WIDTH, HEIGHT))
+
+
     pygame.display.set_caption(TITLE)
 
+def simulator_quit():
+    pygame.quit()
 # initialize()
 # while True:
 #     update_screen([0x01] * 16)
