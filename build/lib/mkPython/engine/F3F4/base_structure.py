@@ -81,7 +81,6 @@ class cell_item():
 
             self.subscribed_para[para]["key"] = new_key
             self.subscribed_key[new_key] = {"obj":self.subscribed_para[para]}
-            print("pppp", self.subscribed_key)
     def get_subscribe_flag(self, para = None):
         if para in self.subscribed_para:
             return self.subscribed_para[para]["subs_flag"]

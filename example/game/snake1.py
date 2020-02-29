@@ -1,14 +1,11 @@
 import pygame
 from sys import exit
 import random
-
+import time
 from mkPython import halo
 
 
 class Point():
-    row = 0
-    clo = 0
-
     def __init__(self, row, clo):
         self.row = row
         self.clo = clo
@@ -101,16 +98,16 @@ while quit:
             #         direct = 'right'
 
 
-    if halo.motion_sensor.is_arrow_down():
+    if halo.touchpad0.is_touched():
         if direct == 'left' or direct == 'right':
             direct = 'top'
-    if halo.motion_sensor.is_arrow_up():
+    if halo.touchpad2.is_touched():
         if direct == 'left' or direct == 'right':
             direct = 'bottom'
-    if halo.motion_sensor.is_tilted_left():
+    if halo.touchpad1.is_touched():
         if direct == 'top' or direct == 'bottom':
             direct = 'left'
-    if halo.motion_sensor.is_tilted_right():
+    if halo.touchpad3.is_touched():
         if direct == 'top' or direct == 'bottom':
             direct = 'right'
 
@@ -159,3 +156,4 @@ while quit:
 
     # 交还控制权
     pygame.display.flip()
+    time.sleep(0.05)

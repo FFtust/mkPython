@@ -132,7 +132,7 @@ class F3F4_process_c():
             if not self.data_tag[tag]['obj'].get_subscribe_flag(para):
                 self.data_tag[tag]['obj'].set_data_new_flag(False, para)
                 
-                print(self.create_subcribe_frame(self.data_tag[tag], para))
+                console.debug(self.create_subcribe_frame(self.data_tag[tag], para))
 
                 self.protocol.send_protocol(self.create_subcribe_frame(self.data_tag[tag], para))
                 
@@ -193,7 +193,6 @@ class system_cmd_process_c():
             self.protocol.send_protocol(bytes([0x0d, 0x80]))
         time.sleep(0.2)
         return self.sys_status
-
 
     def send_sys_cmd(self, script):
         if self.protocol:

@@ -1,4 +1,5 @@
 import time
+from utils.mylog import console
 
 class cell_item():
     def __init__(self, tag, func, paras, default_value):
@@ -51,12 +52,13 @@ class cell_item():
             for item in self.data_update_callBack:
                 item(value)
         else:
-            print("unknown key received")
+            console.warn("unknown key received")
     
-    def wait_data_new(self, para = None, max_time = 1):
+    def wait_data_new(self, para = None, max_time = 3):
         start_t = time.time()
         while time.time() - start_t < max_time:
             if self.subscribed_para[para]["d_n_flag"] == True:
+                print("time", time.time() - start_t)
                 return True
             time.sleep(0.05)
 
@@ -81,7 +83,6 @@ class cell_item():
 
             self.subscribed_para[para]["key"] = new_key
             self.subscribed_key[new_key] = {"obj":self.subscribed_para[para]}
-            print("pppp", self.subscribed_key)
     def get_subscribe_flag(self, para = None):
         if para in self.subscribed_para:
             return self.subscribed_para[para]["subs_flag"]

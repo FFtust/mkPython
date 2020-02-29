@@ -48,11 +48,11 @@ class uart_link(base_link):
 
         super().open()
 
-    def close(self):
+    def close(self, immediate = True):
         if self.ser:
             if self.ser.is_open:
-                self.ser.close()
-
+                if immediate:
+                    self.ser.close()
         super().close()
 
     def write(self, frame):
@@ -84,6 +84,8 @@ class uart_link(base_link):
 
     def __listening_task(self):
         while True:
+            if super().get_status() == super()._LINK_STA_CLOSE:
+                break
             data_stream = self.read()
             if data_stream == b'':
                 continue

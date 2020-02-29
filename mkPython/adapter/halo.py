@@ -67,5 +67,6 @@ class adapter_halo():
         time.sleep(0.2)
         self.protocol_obj.send_protocol(bytes([0x0d, 0x00, 0x01]))
 
-        self.link_obj.write(create_frame(create_package("subscribe.restart()", 0x00, 0x04)))
+        # if subscribe list clear, ther will be a delay about 2 seconds for the first subscribe cmd
+        # self.link_obj.write(create_frame(create_package("subscribe.restart()", 0x00, 0x04)))
 
