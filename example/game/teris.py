@@ -1,13 +1,16 @@
-# # coding:utf-8
-from application.game.game import game_base
-from application.game.game_adapter import set_screen_update_as_smulator
-from application.game.game_controller import registerKeyEvent
+# coding:utf-8
+from mkPython.application.game.game import set_screen_update_func, game_base, sprite_create, RIGHT_MEET, LEFT_MEET,UP_MEET,DOWN_MEET
+from mkPython.application.game.game_simulator import play_music, set_dir, simulator_quit, get_events, initialize, update_screen
+
+from pygame.locals import *
 
 import time
 import random
+import sys
 
 # screen set as simulator
-set_screen_update_as_smulator()
+set_dir("UPRIGHT")
+set_screen_update_func(update_screen)
 
 # game control
 game = game_base()
@@ -26,6 +29,7 @@ current_script = None
 move_lock_flag = False
 
 move_flag = 0
+down_speed = 10
 
 def line_remove_process():
     global score
@@ -39,71 +43,40 @@ def line_remove_process():
             removed_flag = True
             del background[i]
             background.insert(0, 0x00)
+            play_music("score.wav")
         i += 1
     if removed_flag:
-        # codey.speaker.play_melody("start")
         pass
     game.set_background(background)
 
-down_speed = 10
-
 def move_control():
     global down_speed, current_script, move_lock_flag
+    global quit
     if current_script == None :
         time.sleep(0.2)
         return
-    if isKeyPressed(Key_Right) and move_lock_flag == False:
-        current_script.up()
-        if game.background_collision_check(current_script):
-            current_script.down()
 
-    elif isKeyPressed(Key_Left) and move_lock_flag == False:
-        current_script.down()
-        if game.background_collision_check(current_script):
-            current_script.up()
+    for event in get_events():
+        if event.type==QUIT:
+            quit = True
+            simulator_quit()
 
-    elif isKeyPressed(Key_Up) and move_lock_flag == False:
-        current_script.rotate()
+        elif event.type == 2:
+            if event.key == K_LEFT and move_lock_flag == False:
+                current_script.up()
+                if game.background_collision_check(current_script):
+                    current_script.down()
 
-    elif isKeyPressed(Key_Down) and move_lock_flag == False:
-        down_speed = 2
-        
+            elif event.key == K_RIGHT and move_lock_flag == False:
+                current_script.down()
+                if game.background_collision_check(current_script):
+                    current_script.up()
 
-    temp = current_script.meet_border_check()
-    if temp == UP_MEET:
-        current_script.down()
-        while current_script.meet_border_check() == UP_MEET:
-            current_script.down()
-    elif temp == DOWN_MEET:
-        current_script.up()
-        while current_script.meet_border_check() == DOWN_MEET:
-            current_script.up()
+            elif event.key == K_UP and move_lock_flag == False:
+                current_script.rotate()
 
-def move_control2():
-    global down_speed, current_script, move_lock_flag, move_flag
-    if current_script == None :
-        time.sleep(0.2)
-        return
-    if move_flag == 1 and move_lock_flag == False:
-        current_script.up()
-        if game.background_collision_check(current_script):
-            current_script.down()
-        move_flag = 0
-
-    elif move_flag == 2 and move_lock_flag == False:
-        current_script.down()
-        if game.background_collision_check(current_script):
-            current_script.up()
-        move_flag = 0
-
-    elif move_flag == 3 and move_lock_flag == False:
-        current_script.rotate()
-        move_flag = 0
-
-    elif move_flag == 4 and move_lock_flag == False:
-        down_speed = 2
-        move_flag = 0
-        
+            elif event.key == K_DOWN and move_lock_flag == False:
+                down_speed = 2
 
     temp = current_script.meet_border_check()
     if temp == UP_MEET:
@@ -127,9 +100,8 @@ def work():
         if game.background_collision_check(current_script):
             game.del_sprite(current_script)
             current_script = None
-            # codey.speaker.play_melody("wrong")
             game.game_over()
-            # codey.display.show(score)
+            print("your score is:", score)
             score = 0
             break
         count = 1
@@ -141,19 +113,18 @@ def work():
             if current_script.meet_border_check() == RIGHT_MEET:
                 move_lock_flag = True
                 current_script.left()
-                # codey.speaker.play_melody("score")
                 break
 
             if game.background_collision_check(current_script):
                 move_lock_flag = True
                 current_script.left()
-                # codey.speaker.play_melody("score")
                 break
 
-            move_control2()
+            move_control()
 
             time.sleep(0.05)
             count += 1
+
         time.sleep(0.1)
         game.set_background(game.get_screen())
         current_script.hide()
@@ -162,34 +133,5 @@ def work():
         game.del_sprite(current_script)
         move_lock_flag = False
 
-def main():
-    while True:
-        work()
-        time.sleep(2)
 
-def move_right():
-    global move_flag
-    move_flag = 1
-
-def move_left():
-    global move_flag
-    move_flag = 2
-
-def move_up():
-    global move_flag
-    move_flag = 3
-
-def move_down():
-    global move_flag
-    move_flag = 4
-registerKeyEvent(Key_Right, move_right, ())
-registerKeyEvent(Key_Left, move_left, ())
-registerKeyEvent(Key_Up, move_up, ())
-registerKeyEvent(Key_Down, move_down, ())
-
-# on_button_callback3()
-# registerKeyEvent(Key_1, on_button_callback3, ())
-import threading
-th = threading.Thread(target = main, args = ())
-th.start()
-controllerStart()
+work()

@@ -1,6 +1,6 @@
-# # coding:utf-8
+# coding:utf-8
 from mkPython.application.game.game import set_screen_update_func, game_base, sprite_create, RIGHT_MEET, LEFT_MEET,UP_MEET,DOWN_MEET
-from mkPython.application.game.game_simulator import simulator_quit, get_events, initialize, update_screen
+from mkPython.application.game.game_simulator import play_music, set_dir, simulator_quit, get_events, initialize, update_screen
 
 from pygame.locals import *
 
@@ -9,7 +9,7 @@ import random
 import sys
 
 # screen set as simulator
-# initialize()
+set_dir("UPRIGHT")
 set_screen_update_func(update_screen)
 
 # game control
@@ -43,6 +43,7 @@ def line_remove_process():
             removed_flag = True
             del background[i]
             background.insert(0, 0x00)
+            play_music("score.wav")
         i += 1
     if removed_flag:
         pass

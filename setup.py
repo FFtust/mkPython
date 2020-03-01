@@ -1,6 +1,8 @@
 import setuptools 
+from mkPython import mkPython_version
+
 setuptools.setup(name='mkPython',
-      version='0.0.23',
+      version=mkPython_version,
       description='python lib for makeblock',
       url='https://github.com/FFtust/mkPython',
       author='FFtust',

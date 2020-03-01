@@ -8,7 +8,8 @@ from adapter.mbuild import adapter_mbuild
 adapter_default = adapter_mbuild(get_port())
 adapter_default.start()
 
-
+def exit():
+	adapter_default.link_obj.close(False)
 
 import device.mbuild_modules.servo_driver as servo_driver
 import device.mbuild_modules.speaker as speaker

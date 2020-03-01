@@ -13,6 +13,11 @@ mkPython/adapter/__init__.py
 mkPython/adapter/halo.py
 mkPython/adapter/halo_mbuild.py
 mkPython/adapter/mbuild.py
+mkPython/application/__init__.py
+mkPython/application/game/__init__.py
+mkPython/application/game/game.py
+mkPython/application/game/game_controller.py
+mkPython/application/game/game_simulator.py
 mkPython/device/__init__.py
 mkPython/device/api_halocode.py
 mkPython/device/api_mbuild.py
