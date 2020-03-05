@@ -17,7 +17,9 @@ def add_table_to_device(adapter, table_tag):
     key_index = len(adapter.process.data_tag)
     for item in table_tag:
         table_tag[item]['key'] = key_index 
-        table_key.update({key_index: {"tag":item, "obj":table_tag[item]["obj"]}})
+        table_key.update({str(key_index): {"tag":item, "obj":table_tag[item]["obj"]}})
+        table_key[str(key_index)]['obj'].key = str(key_index)
+
         key_index += 1
 
 

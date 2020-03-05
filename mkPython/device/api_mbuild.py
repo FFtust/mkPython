@@ -116,23 +116,23 @@ class humiture_sensor_c():
     def set_report_mode(self, mode,timestamp,index = 1):
         self.adapter.process.request("9c667a7764c6a902796c2240a5d6a93b", ( mode,timestamp,index ))
 
-class ir_sensor_c():
+class ir_transceiver_c():
     def __init__(self, adapter):
         self.adapter = adapter
     def receive(self, index = 1):
-        return self.adapter.process.get_value("2d2f607927e4941d2089bfb1f0a64878", ( index ))
+        return self.adapter.process.get_value("3f95497d1cb4da261ab3cf3ed951e0b2", ( index ))
     def send(self, message, index = 1):
-        self.adapter.process.request("56bfe0634270178fa572e73cba9cb7d9", ( message, index ))
+        self.adapter.process.request("93515fca046992a66d004fa6caa064e6", ( message, index ))
     def send_learned_result(self, record_id = 1, index = 1):
-        self.adapter.process.request("f83ef2b1a184445431a49dc13a7635fe", ( record_id , index ))
+        self.adapter.process.request("581ccd207dca28da674e43ee9bab2b88", ( record_id , index ))
     def learn(self, record_id = 1, index = 1):
-        self.adapter.process.request("386674bf9936c10f02224dd690431a8f", ( record_id , index ))
+        self.adapter.process.request("9db0053058e225e8dc3dcb973d124d2c", ( record_id , index ))
     def receive_remote_code(self, index = 1):
-        return self.adapter.process.get_value("98ec9618de3d0429a597ec07bc4a0ca2", ( index ))
+        return self.adapter.process.get_value("e5d8dd14e7894365ad2c958d88177543", ( index ))
     def is_receive(self, cmd, index = 1):
-        return self.adapter.process.get_value("a4c72727d4a331af373beccc20dc0934", ( cmd, index ))
+        return self.adapter.process.get_value("055c1a665153c3a2b2860bcf0a029a3e", ( cmd, index ))
     def __learn_online(self, record_id = 1, index = 1):
-        return self.adapter.process.get_value("3a9892016387dc508e5a654df03f5540", ( record_id , index ))
+        return self.adapter.process.get_value("1e42a436de1fa6414c9929d8a446f6a7", ( record_id , index ))
 
 class joystick_c():
     def __init__(self, adapter):
@@ -256,21 +256,21 @@ class motion_sensor_c():
     def is_upright(self, index = 1):
         return self.adapter.process.get_value("a14c9243b305878ca573a3c94e3ff05d", ( index ))
 
-class mult_touch_c():
+class multi_touch_c():
     def __init__(self, adapter):
         self.adapter = adapter
     def is_active(self, ch, index = 1):
-        return self.adapter.process.get_value("97c6f4d9159ec6a41e12ce7f593d0251", ( ch, index ))
+        return self.adapter.process.get_value("f1c5045848f3c255797ab73d1f54f72e", ( ch, index ))
     def get_value(self, position, index = 1):
-        return self.adapter.process.get_value("f516e9d8d4f64e0348f457b72c695986", ( position, index ))
+        return self.adapter.process.get_value("2b022275430548228780c173e78fd289", ( position, index ))
     def reset_threshold(self, index = 1):
-        self.adapter.process.request("feda9c35333d7ea601ec464207d0dacb", ( index ))
+        self.adapter.process.request("37d2c83a560c6644f4624ebccdeb61f4", ( index ))
     def set_sensitivity(self, sen, index = 1):
-        self.adapter.process.request("cea3a59e1ffb884b474287fe93430715", ( sen, index ))
+        self.adapter.process.request("20a077ad08fcd568b8b55bc85b17c5c9", ( sen, index ))
     def set_report_mode(self, mode,timestamp,index = 1):
-        self.adapter.process.request("6de763e1347e2948000f62f557ef5048", ( mode,timestamp,index ))
+        self.adapter.process.request("366b34663ab4cec11e43c5d17f722637", ( mode,timestamp,index ))
     def get_all_status(self, index = 1):
-        return self.adapter.process.get_value("a5c3b2fe8451bfe92aecb5aefbfbdd71", ( index ))
+        return self.adapter.process.get_value("ad90276e3774b278c35f290d78bc3032", ( index ))
 
 class pir_sensor_c():
     def __init__(self, adapter):

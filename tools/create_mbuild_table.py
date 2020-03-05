@@ -51,7 +51,7 @@ def create_from_file(file_name):
 files = get_api_files()
 
 with open('../../table_mbuild.py', 'w', encoding='UTF-8') as f:
-    f.write("from engine.base_structure import cell_item\r\n\r\n")
+    f.write("from engine.F3F4.base_structure import cell_item\r\n\r\n")
     for file in files:
         f.write("table_" + file[:-3] + "_tag = \\\n{\n"+create_from_file(file) + '}') 
         f.write("\r\n\r\n")

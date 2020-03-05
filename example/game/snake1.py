@@ -78,38 +78,52 @@ clock = pygame.time.Clock()
 while quit:
     # 处理帧频 锁帧
     clock.tick(30)
-    # pygame.event.get()获取当前事件的队列 可以同时发生很多事件
-    # for event in pygame.event.get():
-    #     if event.type == pygame.QUIT:
-    #         quit = False
-    #     elif event.type == pygame.KEYDOWN:
-            # 这里小细节蛇不可以直接左右上下 要判断当前是在什么状态下前行
-            # if event.key == 273 or event.key == 119:
-            #     if direct == 'left' or direct == 'right':
-            #         direct = 'top'
-            # if event.key == 274 or event.key == 115:
-            #     if direct == 'left' or direct == 'right':
-            #         direct = 'bottom'
-            # if event.key == 276 or event.key == 97:
-            #     if direct == 'top' or direct == 'bottom':
-            #         direct = 'left'
-            # if event.key == 275 or event.key == 100:
-            #     if direct == 'top' or direct == 'bottom':
-            #         direct = 'right'
 
+# 光环板触摸控制
+    # if halo.touchpad0.is_touched():
+    #     if direct == 'left' or direct == 'right':
+    #         direct = 'top'
+    # if halo.touchpad2.is_touched():
+    #     if direct == 'left' or direct == 'right':
+    #         direct = 'bottom'
+    # if halo.touchpad1.is_touched():
+    #     if direct == 'top' or direct == 'bottom':
+    #         direct = 'left'
+    # if halo.touchpad3.is_touched():
+    #     if direct == 'top' or direct == 'bottom':
+    #         direct = 'right'
 
-    if halo.touchpad0.is_touched():
+# 光环板倾斜控制
+    if halo.motion_sensor.is_arrow_down():
         if direct == 'left' or direct == 'right':
             direct = 'top'
-    if halo.touchpad2.is_touched():
+    if halo.motion_sensor.is_arrow_up():
         if direct == 'left' or direct == 'right':
             direct = 'bottom'
-    if halo.touchpad1.is_touched():
+    if halo.motion_sensor.is_tilted_left():
         if direct == 'top' or direct == 'bottom':
             direct = 'left'
-    if halo.touchpad3.is_touched():
+    if halo.motion_sensor.is_tilted_right():
         if direct == 'top' or direct == 'bottom':
             direct = 'right'
+
+# 键盘控制
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == 273 or event.key == 119:
+                if direct == 'left' or direct == 'right':
+                    direct = 'top'
+            if event.key == 274 or event.key == 115:
+                if direct == 'left' or direct == 'right':
+                    direct = 'bottom'
+            if event.key == 276 or event.key == 97:
+                if direct == 'top' or direct == 'bottom':
+                    direct = 'left'
+            if event.key == 275 or event.key == 100:
+                if direct == 'top' or direct == 'bottom':
+                    direct = 'right'
 
     # 吃东西
     eat = (head.row == snakeFood.row and head.clo == snakeFood.clo)
@@ -142,6 +156,8 @@ while quit:
     if dead:
         halo.exit()
         print('Game Over')
+        pygame.quit()
+        exit()
         quit = False
     # 背景画图
     pygame.draw.rect(window, (20, 10, 10), (0, 0, width, hight))
@@ -157,3 +173,7 @@ while quit:
     # 交还控制权
     pygame.display.flip()
     time.sleep(0.05)
+
+halo.exit()
+pygame.quit()
+exit()

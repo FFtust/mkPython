@@ -1,6 +1,6 @@
 import time
 
-class mult_touch_c():
+class multi_touch_c():
     def __init__(self):
         pass
         

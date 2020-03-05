@@ -7,7 +7,7 @@ from engine.F3F4.package import create_package, print_frame
 from engine.F3F4.base_structure import cell_item
 
 GET_VALUE_DELAY_TIME = 0.001
-REQUEST_DELAY_TIME = 0.03
+REQUEST_DELAY_TIME = 0.05
 
 def delay_sync(t = 0):
     if t > 0:

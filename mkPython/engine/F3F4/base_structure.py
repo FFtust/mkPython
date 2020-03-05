@@ -58,7 +58,6 @@ class cell_item():
         start_t = time.time()
         while time.time() - start_t < max_time:
             if self.subscribed_para[para]["d_n_flag"] == True:
-                print("time", time.time() - start_t)
                 return True
             time.sleep(0.05)
 

@@ -1,6 +1,6 @@
 import time
 
-class ir_sensor_c():
+class ir_transceiver_c():
     def __init__(self):
         pass
         

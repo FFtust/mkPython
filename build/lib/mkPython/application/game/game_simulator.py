@@ -4,12 +4,13 @@ import random
 import time
 import threading
 
-WIDTH = 256
-HEIGHT = 512
+SCREEN_DIR = "ACROSS" # UPRIGHT
+WIDTH = 512
+HEIGHT = 256
 TITLE = "16 * 8 点阵游戏模拟机"
 
-ROW = 16
-CLO = 8
+ROW = 8
+CLO = 16
 
 BACK_COLOR = (10, 20, 30)
 POINT_COLOR = (0, 0, 200)
@@ -54,16 +55,23 @@ def update_screen(data):
     8 * 16
     '''
     global WIDTH, HEIGHT, TITLE, ROW, CLO
+    global SCREEN_DIR
 
     if not window:
         initialize()
 
     draw_background()
-
-    for i in range(ROW):
-        for j in range(CLO):
-            if (data[i] & (0x01 << j)):
-                rect(Point(i, j), POINT_COLOR)
+    if SCREEN_DIR == "ACROSS":
+        for i in range(CLO):
+            for j in range(ROW):
+                if (data[i] & (0x01 << j)):
+                    rect(Point(j, i), POINT_COLOR)
+    else:
+         for i in range(ROW):
+            for j in range(CLO):
+                if (data[i] & (0x01 << j)):
+                    rect(Point(i, j), POINT_COLOR)
+                           
     pygame.display.flip()
     if pygame_events == []:
         pygame_events = pygame.event.get()
@@ -75,21 +83,40 @@ def get_events():
     pygame_events = []
     return ret
 
-
 window = None
 def initialize():
     global WIDTH, HEIGHT, TITLE, ROW, CLO
     global window
-    
+    global SCREEN_DIR
+
     pygame.init()
+
+    if SCREEN_DIR == "UPRIGHT":
+        temp = WIDTH
+        WIDTH = HEIGHT
+        HEIGHT = temp
+
+        temp = ROW
+        ROW = CLO
+        CLO = temp
+
+    print(WIDTH, HEIGHT, ROW, CLO)
 
     window = pygame.display.set_mode((WIDTH, HEIGHT))
 
 
     pygame.display.set_caption(TITLE)
 
+def set_dir(s_dir = "ACROSS"):
+    global SCREEN_DIR
+    
+    SCREEN_DIR = s_dir 
+
 def simulator_quit():
     pygame.quit()
-# initialize()
-# while True:
-#     update_screen([0x01] * 16)
+
+
+pygame.mixer.init()
+def play_music(name):
+    pygame.mixer.music.load(r"mkPython/resource/music/" + name)
+    pygame.mixer.music.play()

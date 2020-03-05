@@ -4,6 +4,8 @@
 import serial
 import time
 import threading
+import signal
+import sys
 
 from utils.mylog import console
 from link.base import base_link
@@ -18,7 +20,15 @@ class uart_link(base_link):
         super().__init__()
 
         self.write_lock = threading.Lock()
-    
+
+        signal.signal(signal.SIGINT, self.signal_handler)
+        self.exiting = False
+
+
+    def signal_handler(self, sig, frame):
+        print('You pressed Ctrl+C!')
+        self.exiting = True
+
     '''
     para:[port, baudrate, timeout]
     '''
@@ -76,7 +86,7 @@ class uart_link(base_link):
         protocol.link = self
 
     def start_listening(self):
-        self.thread_work = threading.Thread(target = self.__listening_task, args = ())
+        self.thread_work = threading.Thread(target = self.__listening_task, args = (), daemon=True)
         self.thread_work.start()
         
     def stop_listening(self):
@@ -86,8 +96,12 @@ class uart_link(base_link):
         while True:
             if super().get_status() == super()._LINK_STA_CLOSE:
                 break
+
+            if self.exiting:
+                break
             data_stream = self.read()
             if data_stream == b'':
                 continue
             for item in self.protocol_list:
                 item.parse_data_stream(data_stream, "uart")
+
