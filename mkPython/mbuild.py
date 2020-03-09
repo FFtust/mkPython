@@ -55,4 +55,4 @@ motor_driver = dc_motor_driver
 
 
 # colorful_handle
-import device.mbuild_modules.colorful_handle as colorful_handle
+import device.mbuild_modules.fingertip_piano as fingertip_piano

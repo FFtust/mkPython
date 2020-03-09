@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import serial
+import socket
 import time
 import threading
 import signal
 import sys
 
-from utils.mylog import console
+# from utils.mylog import console
 from link.base import base_link
 
-BAUDRATE_DEFAULT = 115200
-SERIAL_TIMEOUT_DEFAULT = 0.3
+IP_DEFAULT = "192.168.4.1"
+PORT_DEFAULT = 5050
+READ_TIMEOUT_DEFAULT = 0.3
 
-class uart_link(base_link):
+class socket_link(base_link):
     def __init__(self, para):
         self.protocol_list = []
         self.config(para)
@@ -37,48 +38,39 @@ class uart_link(base_link):
             return
 
         if len(para) == 1:
-            para.append(BAUDRATE_DEFAULT)
-            para.append(SERIAL_TIMEOUT_DEFAULT)
+            para.append(IP_DEFAULT)
+            para.append(PORT_DEFAULT)
         elif len(para) == 2:
-            para.append(SERIAL_TIMEOUT_DEFAULT)
+            para.append(PORT_DEFAULT)
 
-        self.ser = None
-        self.com_port = para[0]
-        self.baudrate = para[1]
+        self.socket = None
+        self.ip = para[1]
+        self.port = para[2]
 
-        self.ser = serial.Serial(None, self.baudrate, timeout = SERIAL_TIMEOUT_DEFAULT)
+
         super().config(para)
 
     def open(self):
-        self.ser.port = self.com_port
-        self.ser.baudrate = self.baudrate
-        self.ser.write_timeout = SERIAL_TIMEOUT_DEFAULT
-        if not self.ser.is_open:
-            self.ser.open()
+        self.socket = socket.socket()
+        print((self.ip, self.port))
+        if self.socket.connect((self.ip, self.port)):
+            print("connect successed: %s, %s" %(self.ip, self.port))
+        else:
+            print("connect failed: %s, %s" %(self.ip, self.port))
 
         super().open()
 
     def close(self, immediate = True):
-        if self.ser:
-            if self.ser.is_open:
-                if immediate:
-                    self.ser.close()
+        self.socket.disconnect()
         super().close()
 
     def write(self, frame):
-        if not self.ser.is_open:
-            return
-
-        console.debug("phy write frame is: %s" %frame)
-
         self.write_lock.acquire()
-        self.ser.write(frame)
+        self.scoket.write(frame)
         self.write_lock.release()
 
     def read(self, bytes_num = 1):
-        data = bytearray()
-        if self.ser.is_open:
-            data = self.ser.read(bytes_num)
+        data = self.scoket.read(bytes_num)
         return data
     
     def rigister_protocol_parse_handle(self, protocol):
@@ -104,4 +96,3 @@ class uart_link(base_link):
                 continue
             for item in self.protocol_list:
                 item.parse_data_stream(data_stream, "uart")
-

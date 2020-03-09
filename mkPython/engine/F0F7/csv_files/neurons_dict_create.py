@@ -200,7 +200,7 @@ read_common_neurons_command_response_to_dict()
 
 
 
-release_note = "add command for smart servo "
+release_note = "update fingertrip lib "
 
 try:
     import sys

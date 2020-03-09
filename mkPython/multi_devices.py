@@ -110,7 +110,7 @@ def create_new(device_name, port, boardrate = 115200):
         import device.mbuild_modules.smart_camera as smart_camera
         import device.mbuild_modules.mbot as mbot
         # colorful_handle
-        import device.mbuild_modules.colorful_handle as colorful_handle
+        import device.mbuild_modules.fingertip_piano as fingertip_piano
 
         mbuild = api_template()
         mbuild.servo_driver = servo_driver
@@ -145,6 +145,6 @@ def create_new(device_name, port, boardrate = 115200):
         mbuild.smart_camera = smart_camera
 
         # colorful_handle
-        mbuild.colorful_handle = colorful_handle
+        mbuild.fingertip_piano = fingertip_piano
 
         return mbuild

@@ -1,7 +1,5 @@
-from engine.F3F4.base_structure import cell_item
-
-
-
+from engine.F3F4.base_structure import cell_item
+
 table_angle_sensor_tag = \
 {
 "9f0895fa07c02a1d16137818b13970c1": {"key":None, "obj":cell_item("9f0895fa07c02a1d16137818b13970c1", "mbuild.angle_sensor.__init__", (), False)},
@@ -11,10 +9,8 @@ table_angle_sensor_tag = \
 "0ecdb626db6f484680dfea29b3805d4c": {"key":None, "obj":cell_item("0ecdb626db6f484680dfea29b3805d4c", "mbuild.angle_sensor.is_rotating_anticlockwise", (), False)},
 "4b0dcf2bc13b4ff8af8a6d1ca4b0286c": {"key":None, "obj":cell_item("4b0dcf2bc13b4ff8af8a6d1ca4b0286c", "mbuild.angle_sensor.reset_angle", (), False)},
 "cc16340ef1df6568622defad08faa434": {"key":None, "obj":cell_item("cc16340ef1df6568622defad08faa434", "mbuild.angle_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_button_tag = \
 {
 "0d68ee311de0a75b459bf84f9e6eefc0": {"key":None, "obj":cell_item("0d68ee311de0a75b459bf84f9e6eefc0", "mbuild.button.__init__", (), False)},
@@ -22,10 +18,8 @@ table_button_tag = \
 "f139809beba109011b5fca14be947968": {"key":None, "obj":cell_item("f139809beba109011b5fca14be947968", "mbuild.button.get_count", (), False)},
 "633df041e2e92f92c8226904d5cec429": {"key":None, "obj":cell_item("633df041e2e92f92c8226904d5cec429", "mbuild.button.reset_count", (), False)},
 "a8baad0c0156c7a7f7bbcedf7c1c0916": {"key":None, "obj":cell_item("a8baad0c0156c7a7f7bbcedf7c1c0916", "mbuild.button.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_dc_motor_driver_tag = \
 {
 "070e23a99721e0fd0289b58a103a59f4": {"key":None, "obj":cell_item("070e23a99721e0fd0289b58a103a59f4", "mbuild.dc_motor_driver.__init__", (), False)},
@@ -36,10 +30,8 @@ table_dc_motor_driver_tag = \
 "fbf47367af62e84906a263c6e58e889b": {"key":None, "obj":cell_item("fbf47367af62e84906a263c6e58e889b", "mbuild.dc_motor_driver.get_load", (), False)},
 "a40af40c915ee1c14abd858f95adddc9": {"key":None, "obj":cell_item("a40af40c915ee1c14abd858f95adddc9", "mbuild.dc_motor_driver.stop_all", (), False)},
 "7995cdf7be28641545ac65d94dd897ef": {"key":None, "obj":cell_item("7995cdf7be28641545ac65d94dd897ef", "mbuild.dc_motor_driver.stop", (), False)},
-}
-
-
-
+}
+
 table_dual_rgb_sensor_tag = \
 {
 "c21c9b573dd7371634dc9fe981e3af51": {"key":None, "obj":cell_item("c21c9b573dd7371634dc9fe981e3af51", "mbuild.dual_rgb_sensor.__init__", (), False)},
@@ -61,54 +53,44 @@ table_dual_rgb_sensor_tag = \
 "39c9e7bee280ed50c88d74f9d3eaf563": {"key":None, "obj":cell_item("39c9e7bee280ed50c88d74f9d3eaf563", "mbuild.dual_rgb_sensor.get_blue", (), False)},
 "75de78d8cd0892bedf0e183e6e32c716": {"key":None, "obj":cell_item("75de78d8cd0892bedf0e183e6e32c716", "mbuild.dual_rgb_sensor.get_reflected_light", (), False)},
 "46947b28e626ed4ad32aff06acea3ef7": {"key":None, "obj":cell_item("46947b28e626ed4ad32aff06acea3ef7", "mbuild.dual_rgb_sensor.set_light_color", (), False)},
-}
-
-
-
+}
+
 table_flame_sensor_tag = \
 {
 "1c37949e794ae74827deeabf369ae5e8": {"key":None, "obj":cell_item("1c37949e794ae74827deeabf369ae5e8", "mbuild.flame_sensor.__init__", (), False)},
 "43f0d77491c8419473a17732f57b8d71": {"key":None, "obj":cell_item("43f0d77491c8419473a17732f57b8d71", "mbuild.flame_sensor.is_active", (), False)},
 "0eb7bee77af43f4ed73e5dbea28767ab": {"key":None, "obj":cell_item("0eb7bee77af43f4ed73e5dbea28767ab", "mbuild.flame_sensor.get_value", (), False)},
 "6ecfce4520bc7a8c6f6f433a5d0cf427": {"key":None, "obj":cell_item("6ecfce4520bc7a8c6f6f433a5d0cf427", "mbuild.flame_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_gas_sensor_tag = \
 {
 "b9312ddb6e94d99e918c7d5304ad11e7": {"key":None, "obj":cell_item("b9312ddb6e94d99e918c7d5304ad11e7", "mbuild.gas_sensor.__init__", (), False)},
 "ad72d23e5be460e6b40afb877b23125b": {"key":None, "obj":cell_item("ad72d23e5be460e6b40afb877b23125b", "mbuild.gas_sensor.is_active", (), False)},
 "3677f5f5d7053d60cedd2d18eeba27d1": {"key":None, "obj":cell_item("3677f5f5d7053d60cedd2d18eeba27d1", "mbuild.gas_sensor.get_value", (), False)},
 "a3a5038fe5b0e6c234d586fc5675d77c": {"key":None, "obj":cell_item("a3a5038fe5b0e6c234d586fc5675d77c", "mbuild.gas_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_humiture_sensor_tag = \
 {
 "41f60c776fc55a267a7407dc06d1e903": {"key":None, "obj":cell_item("41f60c776fc55a267a7407dc06d1e903", "mbuild.humiture_sensor.__init__", (), False)},
 "388a03ffa4616b7194a7598babcb0772": {"key":None, "obj":cell_item("388a03ffa4616b7194a7598babcb0772", "mbuild.humiture_sensor.get_relative_humidity", (), False)},
 "4ba5c22dae40abef34c3f11ac10ec1be": {"key":None, "obj":cell_item("4ba5c22dae40abef34c3f11ac10ec1be", "mbuild.humiture_sensor.get_temperature", (), False)},
 "9c667a7764c6a902796c2240a5d6a93b": {"key":None, "obj":cell_item("9c667a7764c6a902796c2240a5d6a93b", "mbuild.humiture_sensor.set_report_mode", (), False)},
-}
-
-
-
-table_ir_sensor_tag = \
+}
+
+table_ir_transceiver_tag = \
 {
-"d87830ab36a009d9f81749978a5fc0be": {"key":None, "obj":cell_item("d87830ab36a009d9f81749978a5fc0be", "mbuild.ir_sensor.__init__", (), False)},
-"2d2f607927e4941d2089bfb1f0a64878": {"key":None, "obj":cell_item("2d2f607927e4941d2089bfb1f0a64878", "mbuild.ir_sensor.receive", (), False)},
-"56bfe0634270178fa572e73cba9cb7d9": {"key":None, "obj":cell_item("56bfe0634270178fa572e73cba9cb7d9", "mbuild.ir_sensor.send", (), False)},
-"f83ef2b1a184445431a49dc13a7635fe": {"key":None, "obj":cell_item("f83ef2b1a184445431a49dc13a7635fe", "mbuild.ir_sensor.send_learned_result", (), False)},
-"386674bf9936c10f02224dd690431a8f": {"key":None, "obj":cell_item("386674bf9936c10f02224dd690431a8f", "mbuild.ir_sensor.learn", (), False)},
-"98ec9618de3d0429a597ec07bc4a0ca2": {"key":None, "obj":cell_item("98ec9618de3d0429a597ec07bc4a0ca2", "mbuild.ir_sensor.receive_remote_code", (), False)},
-"a4c72727d4a331af373beccc20dc0934": {"key":None, "obj":cell_item("a4c72727d4a331af373beccc20dc0934", "mbuild.ir_sensor.is_receive", (), False)},
-"3a9892016387dc508e5a654df03f5540": {"key":None, "obj":cell_item("3a9892016387dc508e5a654df03f5540", "mbuild.ir_sensor.__learn_online", (), False)},
-}
-
-
-
+"d6180899640d3be668c3db660b6147b4": {"key":None, "obj":cell_item("d6180899640d3be668c3db660b6147b4", "mbuild.ir_transceiver.__init__", (), False)},
+"3f95497d1cb4da261ab3cf3ed951e0b2": {"key":None, "obj":cell_item("3f95497d1cb4da261ab3cf3ed951e0b2", "mbuild.ir_transceiver.receive", (), False)},
+"93515fca046992a66d004fa6caa064e6": {"key":None, "obj":cell_item("93515fca046992a66d004fa6caa064e6", "mbuild.ir_transceiver.send", (), False)},
+"581ccd207dca28da674e43ee9bab2b88": {"key":None, "obj":cell_item("581ccd207dca28da674e43ee9bab2b88", "mbuild.ir_transceiver.send_learned_result", (), False)},
+"9db0053058e225e8dc3dcb973d124d2c": {"key":None, "obj":cell_item("9db0053058e225e8dc3dcb973d124d2c", "mbuild.ir_transceiver.learn", (), False)},
+"e5d8dd14e7894365ad2c958d88177543": {"key":None, "obj":cell_item("e5d8dd14e7894365ad2c958d88177543", "mbuild.ir_transceiver.receive_remote_code", (), False)},
+"055c1a665153c3a2b2860bcf0a029a3e": {"key":None, "obj":cell_item("055c1a665153c3a2b2860bcf0a029a3e", "mbuild.ir_transceiver.is_receive", (), False)},
+"1e42a436de1fa6414c9929d8a446f6a7": {"key":None, "obj":cell_item("1e42a436de1fa6414c9929d8a446f6a7", "mbuild.ir_transceiver.__learn_online", (), False)},
+}
+
 table_joystick_tag = \
 {
 "1a5c3e36b530fff54e8133728a115f0d": {"key":None, "obj":cell_item("1a5c3e36b530fff54e8133728a115f0d", "mbuild.joystick.__init__", (), False)},
@@ -119,10 +101,8 @@ table_joystick_tag = \
 "6687c433de820a307fbdcc2169219d37": {"key":None, "obj":cell_item("6687c433de820a307fbdcc2169219d37", "mbuild.joystick.is_down", (), False)},
 "27101e22d845672b35d0c4974f119d3d": {"key":None, "obj":cell_item("27101e22d845672b35d0c4974f119d3d", "mbuild.joystick.is_left", (), False)},
 "dea51efcfbcb1a3a06077926283174ca": {"key":None, "obj":cell_item("dea51efcfbcb1a3a06077926283174ca", "mbuild.joystick.is_right", (), False)},
-}
-
-
-
+}
+
 table_led_panel_tag = \
 {
 "2a149716edf6c6062a9c31b54bd521ad": {"key":None, "obj":cell_item("2a149716edf6c6062a9c31b54bd521ad", "mbuild.led_panel.__init__", (), False)},
@@ -134,10 +114,8 @@ table_led_panel_tag = \
 "506acf1090be70c364693f64ea9ff719": {"key":None, "obj":cell_item("506acf1090be70c364693f64ea9ff719", "mbuild.led_panel.get_pixel", (), False)},
 "4acc66c1392d865190bf2b2fcc4ce938": {"key":None, "obj":cell_item("4acc66c1392d865190bf2b2fcc4ce938", "mbuild.led_panel.toggle_pixel", (), False)},
 "e696af328fe516ae8563de118b93f89c": {"key":None, "obj":cell_item("e696af328fe516ae8563de118b93f89c", "mbuild.led_panel.clear", (), False)},
-}
-
-
-
+}
+
 table_led_strip_tag = \
 {
 "d86b812a8d790066f783d2df29cfcad6": {"key":None, "obj":cell_item("d86b812a8d790066f783d2df29cfcad6", "mbuild.led_strip.__init__", (), False)},
@@ -154,19 +132,15 @@ table_led_strip_tag = \
 "5958086d43a0ade67642b439e5b330f6": {"key":None, "obj":cell_item("5958086d43a0ade67642b439e5b330f6", "mbuild.led_strip.set_block", (), False)},
 "12b443385cc7ca0b66afbb2d02799ff8": {"key":None, "obj":cell_item("12b443385cc7ca0b66afbb2d02799ff8", "mbuild.led_strip.set_effect", (), False)},
 "4fe98bd611dcb535983383d1139837f6": {"key":None, "obj":cell_item("4fe98bd611dcb535983383d1139837f6", "mbuild.led_strip.show", (), False)},
-}
-
-
-
+}
+
 table_light_sensor_tag = \
 {
 "cf2664837f7e8ff69ba3bec3061f6693": {"key":None, "obj":cell_item("cf2664837f7e8ff69ba3bec3061f6693", "mbuild.light_sensor.__init__", (), False)},
 "e840dce5f0220bdeffc25eb5106fe425": {"key":None, "obj":cell_item("e840dce5f0220bdeffc25eb5106fe425", "mbuild.light_sensor.get_value", (), False)},
 "11850e8b701dbe619c31c25774e753d8": {"key":None, "obj":cell_item("11850e8b701dbe619c31c25774e753d8", "mbuild.light_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_magnetic_sensor_tag = \
 {
 "7510b9c0d505b2fd411f12bc872826d0": {"key":None, "obj":cell_item("7510b9c0d505b2fd411f12bc872826d0", "mbuild.magnetic_sensor.__init__", (), False)},
@@ -174,10 +148,8 @@ table_magnetic_sensor_tag = \
 "f8b1b702ede21ddd6bcb06f5d53bc5d8": {"key":None, "obj":cell_item("f8b1b702ede21ddd6bcb06f5d53bc5d8", "mbuild.magnetic_sensor.get_count", (), False)},
 "1afc7dde8d8a34068afd127e1c174417": {"key":None, "obj":cell_item("1afc7dde8d8a34068afd127e1c174417", "mbuild.magnetic_sensor.reset_count", (), False)},
 "1125b5d2aeaef660970fac528d70154b": {"key":None, "obj":cell_item("1125b5d2aeaef660970fac528d70154b", "mbuild.magnetic_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_motion_sensor_tag = \
 {
 "172ae39a514bd0e3ebb45b7ef1ec69b2": {"key":None, "obj":cell_item("172ae39a514bd0e3ebb45b7ef1ec69b2", "mbuild.motion_sensor.__init__", (), False)},
@@ -196,23 +168,19 @@ table_motion_sensor_tag = \
 "db952cb3c6f1112559eb77ff50a2adff": {"key":None, "obj":cell_item("db952cb3c6f1112559eb77ff50a2adff", "mbuild.motion_sensor.is_face_up", (), False)},
 "a34fd5b1fcb988f70895da89a1590ec8": {"key":None, "obj":cell_item("a34fd5b1fcb988f70895da89a1590ec8", "mbuild.motion_sensor.is_face_down", (), False)},
 "a14c9243b305878ca573a3c94e3ff05d": {"key":None, "obj":cell_item("a14c9243b305878ca573a3c94e3ff05d", "mbuild.motion_sensor.is_upright", (), False)},
-}
-
-
-
-table_mult_touch_tag = \
+}
+
+table_multi_touch_tag = \
 {
-"7fa368815a9aeeacc11566d4f94dc7dc": {"key":None, "obj":cell_item("7fa368815a9aeeacc11566d4f94dc7dc", "mbuild.mult_touch.__init__", (), False)},
-"97c6f4d9159ec6a41e12ce7f593d0251": {"key":None, "obj":cell_item("97c6f4d9159ec6a41e12ce7f593d0251", "mbuild.mult_touch.is_active", (), False)},
-"f516e9d8d4f64e0348f457b72c695986": {"key":None, "obj":cell_item("f516e9d8d4f64e0348f457b72c695986", "mbuild.mult_touch.get_value", (), False)},
-"feda9c35333d7ea601ec464207d0dacb": {"key":None, "obj":cell_item("feda9c35333d7ea601ec464207d0dacb", "mbuild.mult_touch.reset_threshold", (), False)},
-"cea3a59e1ffb884b474287fe93430715": {"key":None, "obj":cell_item("cea3a59e1ffb884b474287fe93430715", "mbuild.mult_touch.set_sensitivity", (), False)},
-"6de763e1347e2948000f62f557ef5048": {"key":None, "obj":cell_item("6de763e1347e2948000f62f557ef5048", "mbuild.mult_touch.set_report_mode", (), False)},
-"a5c3b2fe8451bfe92aecb5aefbfbdd71": {"key":None, "obj":cell_item("a5c3b2fe8451bfe92aecb5aefbfbdd71", "mbuild.mult_touch.get_all_status", (), False)},
-}
-
-
-
+"8382b067009bc429bbd1d07cd0174b63": {"key":None, "obj":cell_item("8382b067009bc429bbd1d07cd0174b63", "mbuild.multi_touch.__init__", (), False)},
+"f1c5045848f3c255797ab73d1f54f72e": {"key":None, "obj":cell_item("f1c5045848f3c255797ab73d1f54f72e", "mbuild.multi_touch.is_active", (), False)},
+"2b022275430548228780c173e78fd289": {"key":None, "obj":cell_item("2b022275430548228780c173e78fd289", "mbuild.multi_touch.get_value", (), False)},
+"37d2c83a560c6644f4624ebccdeb61f4": {"key":None, "obj":cell_item("37d2c83a560c6644f4624ebccdeb61f4", "mbuild.multi_touch.reset_threshold", (), False)},
+"20a077ad08fcd568b8b55bc85b17c5c9": {"key":None, "obj":cell_item("20a077ad08fcd568b8b55bc85b17c5c9", "mbuild.multi_touch.set_sensitivity", (), False)},
+"366b34663ab4cec11e43c5d17f722637": {"key":None, "obj":cell_item("366b34663ab4cec11e43c5d17f722637", "mbuild.multi_touch.set_report_mode", (), False)},
+"ad90276e3774b278c35f290d78bc3032": {"key":None, "obj":cell_item("ad90276e3774b278c35f290d78bc3032", "mbuild.multi_touch.get_all_status", (), False)},
+}
+
 table_pir_sensor_tag = \
 {
 "853501f47e3eb699d0732c767ab3f4b9": {"key":None, "obj":cell_item("853501f47e3eb699d0732c767ab3f4b9", "mbuild.pir_sensor.__init__", (), False)},
@@ -220,19 +188,15 @@ table_pir_sensor_tag = \
 "9260e8864d8ee432f87eb7be609882fc": {"key":None, "obj":cell_item("9260e8864d8ee432f87eb7be609882fc", "mbuild.pir_sensor.get_count", (), False)},
 "a91cd0985827caf7c34eeb3429653ce2": {"key":None, "obj":cell_item("a91cd0985827caf7c34eeb3429653ce2", "mbuild.pir_sensor.reset_count", (), False)},
 "9a6f38ccbbb6cfa8b9a484c54693424f": {"key":None, "obj":cell_item("9a6f38ccbbb6cfa8b9a484c54693424f", "mbuild.pir_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_ranging_sensor_tag = \
 {
 "59c3828f436f6a0f800b5a3e518f9629": {"key":None, "obj":cell_item("59c3828f436f6a0f800b5a3e518f9629", "mbuild.ranging_sensor.__init__", (), False)},
 "e36ab4d0ec3adda7e8a81106872d661d": {"key":None, "obj":cell_item("e36ab4d0ec3adda7e8a81106872d661d", "mbuild.ranging_sensor.get_distance", (), False)},
 "e6a10caffa1777f94ceb5e2fb8f8fd3f": {"key":None, "obj":cell_item("e6a10caffa1777f94ceb5e2fb8f8fd3f", "mbuild.ranging_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_rgb_led_tag = \
 {
 "5a62f8fed41599faa6fbfa8866c131bf": {"key":None, "obj":cell_item("5a62f8fed41599faa6fbfa8866c131bf", "mbuild.rgb_led.__init__", (), False)},
@@ -251,10 +215,8 @@ table_rgb_led_tag = \
 "026e6064b248dce505a6b592e21143ea": {"key":None, "obj":cell_item("026e6064b248dce505a6b592e21143ea", "mbuild.rgb_led.__set_r_g_b", (), False)},
 "cd6a1127e3a0e3cca092efc30a563583": {"key":None, "obj":cell_item("cd6a1127e3a0e3cca092efc30a563583", "mbuild.rgb_led.__change_r_g_b", (), False)},
 "97a313759b80aacf2d0fb9a2f0cdbb74": {"key":None, "obj":cell_item("97a313759b80aacf2d0fb9a2f0cdbb74", "mbuild.rgb_led.__get_r_g_b", (), False)},
-}
-
-
-
+}
+
 table_servo_driver_tag = \
 {
 "dd766de358fa25cf461c1dcfc4a67b1f": {"key":None, "obj":cell_item("dd766de358fa25cf461c1dcfc4a67b1f", "mbuild.servo_driver.__init__", (), False)},
@@ -265,19 +227,15 @@ table_servo_driver_tag = \
 "17ec837118b7d6b1ee6196b90a7b2d13": {"key":None, "obj":cell_item("17ec837118b7d6b1ee6196b90a7b2d13", "mbuild.servo_driver.reset", (), False)},
 "5567bf1cca84e20eab3050d8b6b54a62": {"key":None, "obj":cell_item("5567bf1cca84e20eab3050d8b6b54a62", "mbuild.servo_driver.release", (), False)},
 "2821b1c032e90a13866e1bfee7aebd3d": {"key":None, "obj":cell_item("2821b1c032e90a13866e1bfee7aebd3d", "mbuild.servo_driver.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_slider_tag = \
 {
 "ea78eede8360a043537f7679c6ceb817": {"key":None, "obj":cell_item("ea78eede8360a043537f7679c6ceb817", "mbuild.slider.__init__", (), False)},
 "84100c049a10433e4097dafcd5ac8067": {"key":None, "obj":cell_item("84100c049a10433e4097dafcd5ac8067", "mbuild.slider.get_value", (), False)},
 "17b630306a6871f2190947b970b4d3d8": {"key":None, "obj":cell_item("17b630306a6871f2190947b970b4d3d8", "mbuild.slider.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_smartservo_tag = \
 {
 "0f5e29fa680297e5299548e7e2753d12": {"key":None, "obj":cell_item("0f5e29fa680297e5299548e7e2753d12", "mbuild.smartservo.__init__", (), False)},
@@ -303,10 +261,8 @@ table_smartservo_tag = \
 "ccce453c5b5a79fa0343f94ef6a2c9f3": {"key":None, "obj":cell_item("ccce453c5b5a79fa0343f94ef6a2c9f3", "mbuild.smartservo.lock_angle", (), False)},
 "fd7ba507281632ddd3eba296d9757250": {"key":None, "obj":cell_item("fd7ba507281632ddd3eba296d9757250", "mbuild.smartservo.release_angle", (), False)},
 "2269d3aafaf23e3fbcdd30e342581bac": {"key":None, "obj":cell_item("2269d3aafaf23e3fbcdd30e342581bac", "mbuild.smartservo.reset", (), False)},
-}
-
-
-
+}
+
 table_smart_camera_tag = \
 {
 "58ad019ca1d18cb26bc4c8709568fd92": {"key":None, "obj":cell_item("58ad019ca1d18cb26bc4c8709568fd92", "mbuild.smart_camera.__init__", (), False)},
@@ -386,28 +342,22 @@ table_smart_camera_tag = \
 "b0b2dd312ef8d233feee57937ebc2253": {"key":None, "obj":cell_item("b0b2dd312ef8d233feee57937ebc2253", "mbuild.smart_camera.is_lock_label_x", (), False)},
 "e4c9b22fe6035f90f4db3887634c609a": {"key":None, "obj":cell_item("e4c9b22fe6035f90f4db3887634c609a", "mbuild.smart_camera.is_lock_label_y", (), False)},
 "d36eca82b0840f17c8c0533d0e2800e3": {"key":None, "obj":cell_item("d36eca82b0840f17c8c0533d0e2800e3", "mbuild.smart_camera.is_lock_label", (), False)},
-}
-
-
-
+}
+
 table_soil_moisture_sensor_tag = \
 {
 "b99fb9c7e22689407e3ebe01b26ad049": {"key":None, "obj":cell_item("b99fb9c7e22689407e3ebe01b26ad049", "mbuild.soil_moisture_sensor.__init__", (), False)},
 "c7ea6205798cf839467f0c2a8abaecfe": {"key":None, "obj":cell_item("c7ea6205798cf839467f0c2a8abaecfe", "mbuild.soil_moisture_sensor.get_humidity", (), False)},
 "4993a7977584a20212ce673b1e4b3836": {"key":None, "obj":cell_item("4993a7977584a20212ce673b1e4b3836", "mbuild.soil_moisture_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_sound_sensor_tag = \
 {
 "511458bdc4dfb73d9d9daea1d409d475": {"key":None, "obj":cell_item("511458bdc4dfb73d9d9daea1d409d475", "mbuild.sound_sensor.__init__", (), False)},
 "1772353fa7fab93451520883e97c0ba8": {"key":None, "obj":cell_item("1772353fa7fab93451520883e97c0ba8", "mbuild.sound_sensor.get_loudness", (), False)},
 "bc1de1b57727d6542717f2de06135d67": {"key":None, "obj":cell_item("bc1de1b57727d6542717f2de06135d67", "mbuild.sound_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_speaker_tag = \
 {
 "8e62ff84dbfa4a42062767ed29923b3c": {"key":None, "obj":cell_item("8e62ff84dbfa4a42062767ed29923b3c", "mbuild.speaker.__init__", (), False)},
@@ -420,26 +370,20 @@ table_speaker_tag = \
 "18b177140042223782b977823bafc5ee": {"key":None, "obj":cell_item("18b177140042223782b977823bafc5ee", "mbuild.speaker.play_melody", (), False)},
 "4b8ba90c930adaca1c25b0683c3fad14": {"key":None, "obj":cell_item("4b8ba90c930adaca1c25b0683c3fad14", "mbuild.speaker.play_melody_until_done", (), False)},
 "d65f8d12172dfbb9cdd077f4ebd11f3c": {"key":None, "obj":cell_item("d65f8d12172dfbb9cdd077f4ebd11f3c", "mbuild.speaker.is_playing", (), False)},
-}
-
-
-
+}
+
 table_temp_sensor_tag = \
 {
 "1e03e9b6bdd94544bb2d635961c94f1e": {"key":None, "obj":cell_item("1e03e9b6bdd94544bb2d635961c94f1e", "mbuild.temp_sensor.__init__", (), False)},
 "8e4377d0529d07de7178a79f54dbab31": {"key":None, "obj":cell_item("8e4377d0529d07de7178a79f54dbab31", "mbuild.temp_sensor._cal_fahrenheit_from_celsius", (), False)},
 "f71acb6fd6c8fa29cfa3cd461c184b32": {"key":None, "obj":cell_item("f71acb6fd6c8fa29cfa3cd461c184b32", "mbuild.temp_sensor.get_temperature", (), False)},
 "f13962126f162b77eb9a860fb1dd5b3a": {"key":None, "obj":cell_item("f13962126f162b77eb9a860fb1dd5b3a", "mbuild.temp_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
 table_ultrasonic_sensor_tag = \
 {
 "7733f19e61b77f3cec8745bec1be07f7": {"key":None, "obj":cell_item("7733f19e61b77f3cec8745bec1be07f7", "mbuild.ultrasonic_sensor.__init__", (), False)},
 "5e7547a03e2bddad91eca45a5c61b61f": {"key":None, "obj":cell_item("5e7547a03e2bddad91eca45a5c61b61f", "mbuild.ultrasonic_sensor.get_distance", (), False)},
 "44224870a79c8992fb87bb126a7d3918": {"key":None, "obj":cell_item("44224870a79c8992fb87bb126a7d3918", "mbuild.ultrasonic_sensor.set_report_mode", (), False)},
-}
-
-
-
+}
+
